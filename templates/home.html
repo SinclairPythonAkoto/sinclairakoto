@@ -1,0 +1,344 @@
+{% extends "layout2.html" %}
+
+{% block content %}
+
+<!-- About Section -->
+<div class="w3-container" style="padding:128px 16px" id="techniques">
+  <h3 class="w3-center">LANGUAGES</h3>
+  <p class="w3-center w3-large">The languages used to build web apps.</p>
+  <div class="w3-row-padding w3-center" style="margin-top:64px">
+    <div class="w3-quarter">
+      <!-- <i class="fab fa-python"></i> -->
+      <i class="fab fa-python w3-margin-bottom w3-jumbo w3-center"></i>
+      <p class="w3-large">Python</p>
+      <p>
+        I use the current veriosn of Python 3.8.1 to buiild algorithms and create conditional logic.
+        With Python I can also create web apps with Flask - this enables me to embed algorithms &
+        conditional logic in my web pages, making them more dynamic and responsive.  The use of Python
+        also helps me to communicate with other languages such as HTML, SQL & Heroku.
+      </p>
+    </div>
+    <div class="w3-quarter">
+      <i class="fas fa-box-open w3-margin-bottom w3-jumbo"></i>
+      <p class="w3-large">Data Storage</p>
+      <p>
+        To store data and manage databses I use SQL (PostgreSQL).  This enables me to store & validate data,
+        and also view the stored data in other formats - like on a different page or in graphs.  An example
+        of this would be viewing the results of a feedback form.
+      </p>
+    </div>
+    <div class="w3-quarter">
+      <i class="fab fa-git w3-margin-bottom w3-jumbo"></i>
+      <p class="w3-large">Git</p>
+      <p>
+        Git allows me to create opens source projects by allowing me to store and track my code through
+        repositories.  One benefit of using Git & Github is that you can collaberate easily with other
+        developers - all working on the same project from across the globe.
+      </p>
+    </div>
+    <div class="w3-quarter">
+      <i class="fas fa-globe w3-margin-bottom w3-jumbo"></i>
+      <p class="w3-large">Heroku</p>
+      <p>
+        Heroku is a free server which allows me to deploy my web apps online.  Heroku communicates with
+        Git repositories in oder to make the web app a live website.  Another benifit of Heroku is that you
+        can store valuable data and then embed it in your Python code to make it more secure - an example
+        of this would be valuable passwords that you may need for your databases.
+      </p>
+    </div>
+  </div>
+</div>
+
+<!-- Promo Section - "We know design" -->
+<div class="w3-container w3-light-grey" style="padding:128px 16px">
+  <div class="w3-row-padding">
+    <div class="w3-col m6">
+      <h3>WEB APPS</h3>
+      <p>Click below to view the various web apps I have constructed.</p>
+      <p><a href="#work" class="w3-button w3-black"><i class="fa fa-th"> </i> View Web Apps</a></p>
+    </div>
+    <div class="w3-col m6">
+      <img class="w3-image w3-round-large" src="/static/programmer.jpeg" alt="Developer" width="700" height="394">
+    </div>
+  </div>
+</div>
+
+<!-- Team Section -->
+<div class="w3-container" style="padding:128px 16px" id="aboutme">
+  <h3 class="w3-center">ABOUT ME</h3>
+  <p class="w3-center w3-large">Delve into the person behind this portfolio!</p>
+  <div class="w3-row-padding w3-center" style="margin-top:64px, text-center">
+    <div class="w3-col l3 m6 w3-margin-bottom">
+      <div class="w3-card">
+        <img src="/static/SinPic.jpg" alt="SinPic" style="width:100%">
+        <div class="w3-container">
+          <h3>Sinclair Akoto</h3>
+          <p class="w3-opacity">Python / Mobile App / Web Developer</p>
+          <p>
+            "If you can think it you can build it..."<br>
+            What: Python / Google Flutter <br>
+            Where: London / UK based <br>
+            When: 2018 <br>
+            Why: To build & create web/mobile apps to increase productivity & profitability.
+          </p>
+          <p>
+            <button class="w3-button w3-light-grey w3-block">
+              <i class="fas fa-user"></i> <a href="#contact">Contact</a>
+            </button>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Promo Section "Statistics" -->
+<div class="w3-container w3-row w3-center w3-dark-grey w3-padding-64">
+  <div class="w3-quarter">
+    <span class="w3-xxlarge">3+</span>
+    <br>Languages
+  </div>
+  <div class="w3-quarter">
+    <span class="w3-xxlarge">7+</span>
+    <br>Projects
+  </div>
+  <div class="w3-quarter">
+    <span class="w3-xxlarge">17+</span>
+    <br>Repositories on GitHub
+  </div>
+  <div class="w3-quarter">
+    <span class="w3-xxlarge">160+</span>
+    <br>Hours spent coding
+  </div>
+</div>
+
+<!-- Work Section -->
+<div class="w3-container" style="padding:128px 16px" id="work">
+  <h3 class="w3-center">WEB APPS</h3>
+  <p class="w3-center w3-large">Here you can preview the web apps I have made!</p>
+
+  <div class="w3-row-padding" style="margin-top:64px">
+    <div class="w3-col l3 m6">
+      <img src="/static/portfolio/jobs_log.png" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Jobs Log">
+      <a href="https://jobs-log.herokuapp.com/">Jobs Log</a>
+    </div>
+    <div class="w3-col l3 m6">
+      <img src="/static/portfolio/easy_chef.png" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="EasyCHEF">
+      <a href="https://easychef-01.herokuapp.com/">EasyCHEF</a>
+    </div>
+    <div class="w3-col l3 m6">
+      <img src="/static/portfolio/sinclair_connect.png" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Sinclair Connect">
+      <a href="https://sinclairconnect.herokuapp.com/">Sinclair Connect</a>
+    </div>
+  </div>
+
+  <div class="w3-row-padding w3-section">
+    <div class="w3-col l3 m6">
+      <img src="/static/portfolio/jonny.png" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Jonny And Friends For Autism">
+      <a href="https://jaffautism.herokuapp.com/">Jonny And Friends For Autism</a>
+    </div>
+    <div class="w3-col l3 m6">
+      <img src="/static/portfolio/graph.png" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Flask-Dash">
+      <a href="https://flask-dash-sin.herokuapp.com/">Dash Graphs</a>
+    </div>
+    <div class="w3-col l3 m6">
+      <img src="/static/portfolio/aurous.png" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Aurous79 Feedback Form">
+      <a href="https://aurous79feedback.herokuapp.com/feedback">Aurous79 Feedback</a>
+    </div>
+  </div>
+</div>
+
+<!-- Modal for full size images on click-->
+<div id="modal01" class="w3-modal w3-black" onclick="this.style.display='none'">
+  <span class="w3-button w3-xxlarge w3-black w3-padding-large w3-display-topright" title="Close Modal Image">×</span>
+  <div class="w3-modal-content w3-animate-zoom w3-center w3-transparent w3-padding-64">
+    <img id="img01" class="w3-image">
+    <p id="caption" class="w3-opacity w3-large"></p>
+  </div>
+</div>
+
+<!-- Skills Section -->
+<div class="w3-container w3-light-grey w3-padding-64">
+  <div class="w3-row-padding">
+    <div class="w3-col m6">
+      <h3>My Skills.</h3>
+      <p>
+        Computer programming is an area of expertise that no matter how much you know,
+        there will be still room to learn more and find out new skills & techniques.
+      </p>
+      <p>
+        I have attached this skill bar as a constant reminder of how far I've come,
+      and how much more I need to learn in oderer to become a succesful developer.
+    </p>
+    </div>
+    <div class="w3-col m6">
+      <p class="w3-wide"><i class="fab fa-python w3-margin-right"></i>Python & Flask</p>
+      <div class="w3-grey">
+        <div class="w3-container w3-dark-grey w3-center" style="width:45%">45%</div>
+      </div>
+      <p class="w3-wide"><i class="fas fa-mobile-alt w3-margin-right"></i>Google Flutter</p>
+      <div class="w3-grey">
+        <div class="w3-container w3-dark-grey w3-center" style="width:15%">15%</div>
+      </div>
+      <p class="w3-wide"><i class="fas fa-box-open w3-margin-right"></i>SQL</p>
+      <div class="w3-grey">
+        <div class="w3-container w3-dark-grey w3-center" style="width:37%">37%</div>
+      </div>
+      <p class="w3-wide"><i class="fab fa-html5 w3-margin-right"></i>HTML</p>
+      <div class="w3-grey">
+        <div class="w3-container w3-dark-grey w3-center" style="width:32%">32%</div>
+      </div>
+      <p class="w3-wide"><i class="fab fa-css3 w3-margin-right"></i>CSS</p>
+      <div class="w3-grey">
+        <div class="w3-container w3-dark-grey w3-center" style="width:20%">20%</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Pricing Section -->
+<div class="w3-container w3-center w3-dark-grey" style="padding:128px 16px" id="projetcs">
+  <h3>PROJECTS</h3>
+  <p class="w3-large">An insight of the key features of each project created..</p>
+  <div class="w3-row-padding" style="margin-top:64px">
+    <div class="w3-third w3-section">
+      <ul class="w3-ul w3-white w3-hover-shadow">
+        <li class="w3-black w3-xlarge w3-padding-32">AVMI Jobs Log</li>
+        <li class="w3-padding-16"><b>Input data into PostgreSQL database</li>
+        <li class="w3-padding-16"><b>Upload database for users to view</li>
+        <li class="w3-padding-16"><b>Run report to filter from database</li>
+        <li class="w3-padding-16"><b><a href="https://github.com/SinclairPythonAkoto/jobs-log">Source Code</a></li>
+        <li class="w3-light-grey w3-padding-24">
+          <button class="w3-button w3-black w3-padding-large"><a href="https://jobs-log.herokuapp.com/">Visit Jobs Log</a></button>
+        </li>
+      </ul>
+    </div>
+    <div class="w3-third w3-section">
+      <ul class="w3-ul w3-white w3-hover-shadow">
+        <li class="w3-red w3-xlarge w3-padding-48">Sinclair Connect</li>
+        <li class="w3-padding-16"><b>Uses an API to send SMS messages from the webpage to a mobile phone</li>
+        <li class="w3-padding-16"><b>Users can send text messages to UK mobile numbers</li>
+        <li class="w3-padding-16"><b>Users can send me a text message from the webpage straight to my mobile</li>
+        <li class="w3-padding-16"><b>
+          The number which the web app is connected to will not be displayed to the recipient, nor is it displayed on the webpage.
+          This secures the number from view, but can stil be used for buisness & trading.
+        </li>
+        <li class="w3-padding-16"><b>
+          Please note that I have made sure NOT to store any numbers & messages being sent from this app
+        </li>
+        <li class="w3-padding-16"><b><a href="https://github.com/SinclairPythonAkoto/sinclairconnect">Source Code</a></li>
+        <li class="w3-light-grey w3-padding-24">
+          <button class="w3-button w3-black w3-padding-large"><a href="https://sinclairconnect.herokuapp.com/">Visit Sinclair Connect</a></button>
+        </li>
+      </ul>
+    </div>
+    <div class="w3-third w3-section">
+      <ul class="w3-ul w3-white w3-hover-shadow">
+        <li class="w3-black w3-xlarge w3-padding-32">EasyCHEF!</li>
+        <li class="w3-padding-16"><b>Uses an API to retrieve a recipe for the user</li>
+        <li class="w3-padding-16"><b>Uses an API to retrieve a news feed</li>
+        <li class="w3-padding-16"><b>The news feed has been filtered to upload only news related to culinary, kitchen, health &/or food topics</li>
+        <li class="w3-padding-16"><b><a href="https://github.com/SinclairPythonAkoto/easychef-01">Source Code</a></li>
+        <li class="w3-light-grey w3-padding-24">
+          <button class="w3-button w3-black w3-padding-large"><a href="https://easychef-01.herokuapp.com/">Visit EasyCHEF!</a></button>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="w3-row-padding" style="margin-top:64px">
+    <div class="w3-third w3-section">
+      <ul class="w3-ul w3-white w3-hover-shadow">
+        <li class="w3-red w3-xlarge w3-padding-32">Jonny And Friends For Autism</li>
+        <li class="w3-padding-16"><b>Send text mesaages to UK mobile numbers</li>
+        <li class="w3-padding-16"><b>Recieve text messages sent from the web app</li>
+        <li class="w3-padding-16"><b>You will be redirected to login if an attempt was made to access the admin page without signing in.</li>
+        <li class="w3-padding-16"><b>Send emails to any valid email address</li>
+        <li class="w3-padding-16"><b>Emails being sent are attached with a footer & a logo at the bottom</li>
+        <li class="w3-padding-16"><b><a href="https://github.com/SinclairPythonAkoto/jaffautism">Source Code</a></li>
+        <li class="w3-light-grey w3-padding-24">
+          <button class="w3-button w3-black w3-padding-large"><a href="https://jaffautism.herokuapp.com/">Visit JAFFA</a></button>
+        </li>
+      </ul>
+    </div>
+    <div class="w3-third w3-section">
+      <ul class="w3-ul w3-white w3-hover-shadow">
+        <li class="w3-black w3-xlarge w3-padding-48">Aurous79 Feedback Form</li>
+        <li class="w3-padding-16"><b>Mobile responsive top navigation bar</li>
+        <li class="w3-padding-16"><b>Data from completed feedback form is stored into PostgreSQL database</li>
+        <li class="w3-padding-16"><b>Login system for management</li>
+        <li class="w3-padding-16"><b>Upload data from databse for management to review</li>
+        <li class="w3-padding-16"><b>Run a report to filter data from the database</li>
+        <li class="w3-padding-16"><b>Data visualisation with Plotly-Dash graphs</li>
+        <li class="w3-padding-16"><b>Send mass emails - all email entries from feedback form table</li>
+        <li class="w3-padding-16"><b>Ability to input name & email to send mass emails to (if they are not customers or who haven't completed the feedback form)</li>
+        <li class="w3-padding-16"><b>Send single emails to customers / clients</li>
+        <li class="w3-padding-16"><b><a href="https://github.com/SinclairPythonAkoto/aurous79feedback">Source Code</a></li>
+        <li class="w3-light-grey w3-padding-24">
+          <button class="w3-button w3-black w3-padding-large"><a href="https://aurous79feedback.herokuapp.com/">Visit Aurous79 Feedback Form</a></button>
+        </li>
+      </ul>
+    </div>
+    <div class="w3-third w3-section">
+      <ul class="w3-ul w3-white w3-hover-shadow">
+        <li class="w3-red w3-xlarge w3-padding-32">Dash Graphs</li>
+        <li class="w3-padding-16"><b>Input data into PostgreSQL databse</li>
+        <li class="w3-padding-16"><b>Use of F-Strings to show user information inserted to database</li>
+        <li class="w3-padding-16"><b>Connect database to X & Y axis</li>
+        <li class="w3-padding-16"><b>Upload database for users to view in a graph format</li>
+        <li class="w3-padding-16"><b><a href="https://github.com/SinclairPythonAkoto/flask-dash">Source Code</a></li>
+        <li class="w3-light-grey w3-padding-24">
+          <button class="w3-button w3-black w3-padding-large"><a href="https://flask-dash-sin.herokuapp.com/">Visit Dash Graphs</a></button>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- Contact Section -->
+<div class="w3-container w3-light-grey" style="padding:128px 16px" id="contact">
+  <h3 class="w3-center">CONTACT DETAILS</h3>
+  <p class="w3-center w3-large">Lets get in touch or leave a review!</p>
+  <div style="margin-top:48px">
+    <p><i class="fa fa-map-marker fa-fw w3-xxlarge w3-margin-right"></i> London, UK</p>
+    <p>
+      <a href="https://sinclairconnect.herokuapp.com/textMe" class="w3-text-blue">
+        <i class="fa fa-phone fa-fw w3-margin-right w3-xxlarge w3-text-teal"></i>07481790498
+      </a>
+       Click the number to send me a text
+    </p>
+    <p><i class="fas fa-at fa-fw w3-xxlarge w3-margin-right"> </i> Email: sinclair.python@gmail.com</p>
+    <br>
+    <!-- <form action="#" target="_blank">
+      <p><input class="w3-input w3-border" type="text" placeholder="Name" required name="Name"></p>
+      <p><input class="w3-input w3-border" type="text" placeholder="Email" required name="Email"></p>
+      <p><input class="w3-input w3-border" type="text" placeholder="Subject" required name="Subject"></p>
+      <p><input class="w3-input w3-border" type="text" placeholder="Message" required name="Message"></p>
+      <p>
+        <button class="w3-button w3-black" type="submit">
+          <i class="fa fa-paper-plane"></i> SEND MESSAGE
+        </button>
+      </p>
+    </form> -->
+    <!-- Image of location/map -->
+    <img src="/static/coding_python.jpg" class="w3-image w3-greyscale" style="width:100%;margin-top:16px">
+  </div>
+</div>
+
+<!-- Footer -->
+<footer class="w3-center w3-black w3-padding-64">
+  <a href="#home" class="w3-button w3-light-grey"><i class="fa fa-arrow-up w3-margin-right"></i>To the top</a>
+  <div class="w3-xlarge w3-section">
+    <a href="#"><i class="fab fa-facebook-f w3-hover-opacity"></i></a>
+    <a href="#"><i class="fab fa-instagram w3-hover-opacity"></i></a>
+    <a href="#"><i class="fab fa-snapchat w3-hover-opacity"></i></a>
+    <a href="https://github.com/SinclairPythonAkoto"><i class="fab fa-github w3-hover-opacity"></i></a>
+    <a href="#"><i class="fab fa-twitter w3-hover-opacity"></i></a>
+    <a href="https://www.linkedin.com/in/sinclair-akoto-a6997a146/"><i class="fab fa-linkedin w3-hover-opacity"></i></a>
+  </div>
+  <p>Design. Build. Apply! </p>
+  <p class="w3-hover-text-blue">
+    Sinclair Python Akoto
+  </p>
+</footer>
+
+{% endblock %}
