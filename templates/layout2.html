@@ -40,12 +40,13 @@ body, html {
     <a href="#home" class="w3-bar-item w3-button w3-wide">SINCLAIR PYTHON AKOTO</a>
     <!-- Right-sided navbar links -->
     <div class="w3-right w3-hide-small">
-      <a href="#techniques" class="w3-bar-item w3-button">TECH</a>
+      <a href="#techniques" class="w3-bar-item w3-button"><i class="fas fa-microchip"></i> TECH</a>
       <a href="#aboutme" class="w3-bar-item w3-button"><i class="fa fa-user"></i> ABOUT ME</a>
       <a href="#work" class="w3-bar-item w3-button"><i class="fa fa-th"></i> WORK</a>
       <a href="{{ url_for('sinclairCV') }}" class="w3-bar-item w3-button" id="cvPage"><i class="far fa-file"></i> CV</a>
       <a href="#projetcs" class="w3-bar-item w3-button"><i class="fas fa-laptop-code"></i> PROJECTS</a>
       <a href="#contact" class="w3-bar-item w3-button"><i class="fa fa-envelope"></i> CONTACT</a>
+      <a href="{{ url_for('BondRobotics') }}" class="w3-bar-item w3-button w3-text-blue"><i class="fas fa-robot"></i> BondRobotics</a>
     </div>
     <!-- Hide right-floated links on small screens and replace them with a menu icon -->
 
@@ -64,6 +65,7 @@ body, html {
   <a href="{{ url_for('sinclairCV') }}" onclick="w3_close()" class="w3-bar-item w3-button" id="cvPage">CV</a>
   <a href="#projetcs" onclick="w3_close()" class="w3-bar-item w3-button">PROJECTS</a>
   <a href="#contact" onclick="w3_close()" class="w3-bar-item w3-button">CONTACT</a>
+  <a href="{{ url_for('BondRobotics') }}" onclick="w3_close()" class="w3-bar-item w3-button w3-text-blue">BondRobotics</a>
 </nav>
 
 <!-- Header with full-height image -->
@@ -80,11 +82,11 @@ body, html {
     </p>
   </div>
   <div class="w3-display-bottomleft w3-text-grey w3-large" style="padding:24px 48px">
-    <a href="#"><i class="fab fa-facebook-f w3-hover-opacity"></i></a>
-    <a href="#"><i class="fab fa-instagram w3-hover-opacity"></i></a>
-    <a href="#"><i class="fab fa-snapchat w3-hover-opacity"></i></a>
+    <a href="https://www.facebook.com/Bondrobotics"><i class="fab fa-facebook-f w3-hover-opacity"></i></a>
+    <a href="https://www.instagram.com/BondRobotics"><i class="fab fa-instagram w3-hover-opacity"></i></a>
+    <a href="https://www.snapchat.com/add/bondrobotics"><i class="fab fa-snapchat w3-hover-opacity"></i></a>
     <a href="https://github.com/SinclairPythonAkoto"><i class="fab fa-github w3-hover-opacity"></i></a>
-    <a href="#"><i class="fab fa-twitter w3-hover-opacity"></i></a>
+    <a href="https://www.twitter.com/BondRobotics"><i class="fab fa-twitter w3-hover-opacity"></i></a>
     <a href="https://www.linkedin.com/in/sinclair-akoto-a6997a146/"><i class="fab fa-linkedin w3-hover-opacity"></i></a>
   </div>
 </header>
