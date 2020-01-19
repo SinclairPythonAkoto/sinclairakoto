@@ -1,6 +1,81 @@
-{% extends "layout.html" %}
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Sinclair Akoto CV</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <style>
+  body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif;}
+  body, html {
+    height: 100%;
+    color: #777;
+    line-height: 1.8;
+  }
 
-{% block content %}
+  /* Create a Parallax Effect */
+  .bgimg-1, .bgimg-2, .bgimg-3 {
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  /* First image (Logo. Full height) */
+  .bgimg-1 {
+    background-image: url('/static/SinclairPython_logo.JPG');
+    min-height: 100%;
+  }
+
+  /* Second image (Portfolio) */
+  .bgimg-2 {
+    background-image: url("/static/SinclairPython_logo.JPG");
+    min-height: 400px;
+  }
+
+  /* Third image (Contact) */
+  .bgimg-3 {
+    background-image: url("/w3images/parallax3.jpg");
+    min-height: 400px;
+  }
+
+  .w3-wide {letter-spacing: 10px;}
+  .w3-hover-opacity {cursor: pointer;}
+
+  /* Turn off parallax scrolling for tablets and phones */
+  @media only screen and (max-device-width: 1600px) {
+    .bgimg-1, .bgimg-2, .bgimg-3 {
+      background-attachment: scroll;
+      min-height: 400px;
+    }
+  }
+  </style>
+  <script src="https://kit.fontawesome.com/fbfdd5a072.js" crossorigin="anonymous"></script>
+</head>
+<body>
+
+<!-- Navbar (sit on top) -->
+<div class="w3-top">
+  <div class="w3-bar" id="myNavbar">
+    <a class="w3-bar-item w3-button w3-hover-black w3-hide-medium w3-hide-large w3-right" href="javascript:void(0);" onclick="toggleFunction()" title="Toggle Navigation Menu">
+      <i class="fa fa-bars"></i>
+    </a>
+    <a href="/#home" class="w3-bar-item w3-button">HOME</a>
+    <a href="/#about" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-user"></i> ABOUT</a>
+    <a href="/#myWork" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-th"></i> MY WORK</a>
+    <a href="{{ url_for('sinclairCV') }}" class="w3-bar-item w3-button" id="cvPage"><i class="far fa-file"></i> CV</a>
+    <a href="/#contact" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-envelope"></i> CONTACT</a>
+  </div>
+
+  <!-- Navbar on small screens -->
+  <div id="navDemo" class="w3-bar-block w3-white w3-hide w3-hide-large w3-hide-medium">
+    <a href="/#about" class="w3-bar-item w3-button" onclick="toggleFunction()">ABOUT</a>
+    <a href="/#myWork" class="w3-bar-item w3-button" onclick="toggleFunction()">MY WORK</a>
+    <a href="/#contact" class="w3-bar-item w3-button" onclick="toggleFunction()">CONTACT</a>
+  </div>
+</div>
 
 <!-- Page Container -->
 <div class="w3-content w3-margin-top" style="max-width:1400px;">
@@ -13,7 +88,7 @@
 
       <div class="w3-white w3-text-grey w3-card-4">
         <div class="w3-display-container">
-          <img src="/static/SinPic.jpg" style="width:100%" alt="Avatar">
+          <img src="/static/portfolio/SinPic.jpg" style="width:100%" alt="Avatar">
           <div class="w3-display-bottomleft w3-container w3-text-white">
             <h2>Sinclair Akoto</h2>
           </div>
@@ -23,8 +98,8 @@
           <p><i class="fa fa-home fa-fw w3-margin-right w3-large w3-text-teal"></i>London, UK</p>
           <p><i class="fas fa-at fa-fw w3-margin-right w3-large w3-text-teal"></i>sinclair.python@gmail.com</p>
           <p>
-            <a href="https://sinclairsms.onrender.com" class="w3-text-green">
-              <i class="fa fa-phone fa-fw w3-margin-right w3-large w3-text-teal"></i>07481790498
+            <a href="{{ url_for('SinclairConnect') }}" class="w3-text-green">
+              <i class="fa fa-phone fa-fw w3-margin-right w3-large w3-text-teal"></i><b title="Click to send a text">07481790498</b>
             </a>
           </p>
           <hr>
@@ -123,8 +198,7 @@
               The EasyCHEF! web app is slightly different; it uses an API to retrieve a recipe then display only the name of recipe,
               cooking method and web page back to the user.  I will test different ways how my web app can interact with API's to produce a more
               detailed & intricate search for recipes.<br><br>
-              You can test the EasyCHEF! web app <a href="https://easychef.onrender.com" class="w3-text-green">here</a><br><br>
-              You can view the code for the web app on GitHub <a href="https://github.com/SinclairPythonAkoto/easychef_0.2" class="w3-text-green">here</a>.
+              You can test the EasyCHEF! web app <b><a href="https://easychef.onrender.com" class="w3-text-green">here</a></b>.
             </li><br>
             <li>
               <strong>Feedback Forms:</strong>
@@ -137,9 +211,7 @@
             </li>
             <li>
               The information is stored into a database and then reloaded back onto the HTML page for the user to see.<br><br>
-              You can view my code on GitHub <a href="https://github.com/SinclairPythonAkoto/aurous-email-0.2" class="w3-text-green">here</a>.
-              This uses an SQLite3 database which can be run from your local computer.<br><br>
-              You can test out the online Aurous79 Feedback Form <a href="https://aurous79feedback.herokuapp.com" class="w3-text-green">here</a>.
+              You can test out the online Aurous79 Feedback Form <b><a href="https://aurous79feedback.herokuapp.com" class="w3-text-green">here</a></b>.
               This uses a PostgreSQL database which is connected to the app through a remote server online.
             </li><br>
             <li>
@@ -150,8 +222,7 @@
               submitted it is stored into a (remote PostgreSQL) database and then uploaded back onto the same page.
               Every new log entered creates a new row in the table below.  The AV department can then run reports from the
               different columns (such as the type of job and the outcome of each job).<br><br>
-              You can view my code on GitHub <a href="https://github.com/SinclairPythonAkoto/jobs-log" class="w3-text-green">here</a>.<br><br>
-              You can test out the Jobs Log <a href="https://jobs-log.herokuapp.com/" class="w3-text-green">here</a>.
+              You can test out the Jobs Log <b><a href="https://jobs-log.herokuapp.com/" class="w3-text-green">here</a></b>.
             </li><br>
             <li>
               <strong>My Digital Business Card:</strong>
@@ -171,8 +242,8 @@
             <li>Python & Flask</li>
             <li>Google Flutter</li>
             <li>Building web apps with
-              <a href="https://sinclairsms.onrender.com" class="w3-text-green">
-                API's
+              <a href="https://easychef.onrender.com" class="w3-text-green">
+                <b title="Click here to test EasyCHEF!">API's</b>
               </a>
             </li>
             <li>SQL - PostgresSQL, SQLite3, MySQL</li>
@@ -335,4 +406,53 @@
   <!-- End Page Container -->
 </div>
 
-{% endblock %}
+
+<!-- Footer -->
+<footer class="w3-center w3-black w3-padding-64 w3-opacity w3-hover-opacity-off">
+  <a href="#home" class="w3-button w3-light-grey"><i class="fa fa-arrow-up w3-margin-right"></i>To the top</a>
+  <div class="w3-xlarge w3-section">
+    <p class="w3-text-blue">
+      <a href="https://www.facebook.com/Bondrobotics/about"><i class="fab fa-facebook-f w3-hover-opacity"></i></a>
+      <a href="https://www.instagram.com/BondRobotics"><i class="fab fa-instagram w3-hover-opacity"></i></a>
+      <a href="https://www.snapchat.com/add/bondrobotics"><i class="fab fa-snapchat w3-hover-opacity"></i></a>
+      <a href="https://github.com/SinclairPythonAkoto"><i class="fab fa-github w3-hover-opacity"></i></a>
+      <a href="https://www.twitter.com/BondRobotics"><i class="fab fa-twitter w3-hover-opacity"></i></a>
+      <a href="https://www.linkedin.com/in/sinclair-akoto-a6997a146/"><i class="fab fa-linkedin w3-hover-opacity"></i></a>
+    </p>
+  </div>
+  <p>Created by <a href="#" title="BondRobotics Homepage" target="_blank" class="w3-hover-text-blue">BondRobotics</a></p>
+</footer>
+
+<script>
+// Modal Image Gallery
+function onClick(element) {
+  document.getElementById("img01").src = element.src;
+  document.getElementById("modal01").style.display = "block";
+  var captionText = document.getElementById("caption");
+  captionText.innerHTML = element.alt;
+}
+
+// Change style of navbar on scroll
+window.onscroll = function() {myFunction()};
+function myFunction() {
+    var navbar = document.getElementById("myNavbar");
+    if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+        navbar.className = "w3-bar" + " w3-card" + " w3-animate-top" + " w3-white";
+    } else {
+        navbar.className = navbar.className.replace(" w3-card w3-animate-top w3-white", "");
+    }
+}
+
+// Used to toggle the menu on small screens when clicking on the menu button
+function toggleFunction() {
+    var x = document.getElementById("navDemo");
+    if (x.className.indexOf("w3-show") == -1) {
+        x.className += " w3-show";
+    } else {
+        x.className = x.className.replace(" w3-show", "");
+    }
+}
+</script>
+
+</body>
+</html>
