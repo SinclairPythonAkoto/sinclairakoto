@@ -3,3 +3,4 @@ Gunicorn
 requests
 Clockwork
 Stripe
+Flask-Mail
