@@ -1,0 +1,32 @@
+{% extends "demoshop_layout.html" %}
+
+{% block meta %}
+<title>
+  Jackets, Trousers, Shirts, T-Shirts etc | My Demo Shop
+</title>
+{% endblock %}
+
+{% block header %}
+<!-- Image header -->
+<div class="w3-display-container w3-container">
+  <img src="static/demoshop/demoshop_Image.jpg" alt="demoshop_Image" style="width:100%">
+</div>
+{% endblock %}
+
+{% block content %}
+<!-- Product grid -->
+<div>
+  <p>
+    Welcome to My Demo Shop. This has been created to test my ability to take online payments via an
+    external secure payment system called <a href="https://stripe.com/gb">Stripe</a>.
+  </p>
+  <p>
+    The objective of this web app is to mimic the basic concept of taking a single transaction online,
+    collecting the customers details (such as email and address for the reciept & product to be sent to),
+    and subscribing to a newsletter/subriction.
+  </p>
+  <p>
+    Feel free to test out the web app; you can also leave a comment/review by clicking <a href="#demoshop_footer">here</a>.
+  </p>
+</div>
+{% endblock %}

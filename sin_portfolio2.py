@@ -2,6 +2,9 @@ import os
 
 from flask import Flask, render_template, url_for, request, redirect
 import requests
+from functools import wraps
+from flask_mail import Mail, Message
+from payments import *
 
 app = Flask(__name__)
 
@@ -35,6 +38,17 @@ def SinclairConnect():
             return render_template('connect.html', txt=txt, sender=sender, contact=contact)
         else:
             return redirect(url_for('SinclairConnect'))
+
+@app.route('/demoshop')
+def demoshop():
+    return render_template('demoshop_home.html')
+
+@app.route('/demoshop/jackets', methods=['GET', 'POST'])
+def demoshop_jackets():
+    if form.request == 'GET':
+        return render_template('jackets.html')
+    else:
+        pass
 
 if __name__ == '__main__':
    app.run(debug=True)
