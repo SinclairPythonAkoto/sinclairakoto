@@ -41,12 +41,14 @@ def SinclairConnect():
 
 @app.route('/demoshop')
 def demoshop():
-    return render_template('demoshop_home.html')
+    header_title = "My Demo Shop"
+    return render_template('demoshop_home.html', header_title=header_title)
 
-@app.route('/demoshop/jackets', methods=['GET', 'POST'])
+@app.route('/jackets', methods=['GET', 'POST'])
 def demoshop_jackets():
-    if form.request == 'GET':
-        return render_template('jackets.html')
+    header_title = "Jackets"
+    if request.method == 'GET':
+        return render_template('jackets.html', header_title=header_title)
     else:
         pass
 
