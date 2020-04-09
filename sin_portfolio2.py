@@ -52,5 +52,27 @@ def demoshop_jackets():
     else:
         pass
 
+@app.route('/black-gilet-purchase')
+def black_gilet_purchase():
+    return render_template('black_gilet.html', pub_key=pub_key)
+
+@app.route('/black-gilet-checkout', methods=['POST'])
+def black_gilet_checkout():
+    name = request.form.get("Name")
+    street = request.form.get("Street")
+    city = request.form.get("City")
+    postcode = request.form.get("Postcode")
+    if street == '' and postcode == '':
+        return "You need to enter your delivery address"
+    else:
+        from payments import BlackGilet_45gbp
+        CEmail = request.form['stripeEmail']
+
+        # Customer Email to send complimentary message
+        myEmail = CEmail
+
+        # return redirect(url_for('demoshop'))
+        return f"Your package was sent to:{name}\n{street}\n{city}\n{postcode}\nprice: £45.00\nReciept sent to: {CEmail}"
+
 if __name__ == '__main__':
    app.run(debug=True)

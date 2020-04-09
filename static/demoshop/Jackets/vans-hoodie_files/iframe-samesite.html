@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<!-- saved from url=(0067)https://assets.asosservices.com/asos-ui/cookie/iframe-samesite.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Default Same Site Cookie Checking</title>
+  </head>
+  <body>
+    <script>
+      function readCookie(name) {
+        var nameEQ = name + "=";
+        var ca = document.cookie.split(";");
+        for (var i = 0; i < ca.length; i++) {
+          var c = ca[i];
+          while (c.charAt(0) === " ") {
+            c = c.substring(1, c.length);
+          }
+          if (c.indexOf(nameEQ) === 0) {
+            return c.substring(nameEQ.length, c.length);
+          }
+        }
+        return null;
+      }
+
+      function sameSiteBehaviourCheck() {
+        var samesiteNotSetCookieValue = !!readCookie("test-same-site-not-set");
+        var sameSiteNoneCookieValue = !!readCookie("test-same-site-none");
+
+        var state;
+
+        if (!sameSiteNoneCookieValue) {
+          state = "cookieReadingBlocked";
+        } else {
+          state = samesiteNotSetCookieValue;
+        }
+
+        top.postMessage("CookiesDefaultToSameSiteNone:" + state, "*");
+      }
+
+      sameSiteBehaviourCheck();
+    </script>
+  
+
+</body></html>

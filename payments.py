@@ -1,8 +1,12 @@
 import os
+import stripe
 
 # test keys
-pub_key = os.getenv('PUB_KEY')
-secret_key = os.getenv('SECRET_KEY')
+pub_key = 'pk_test_8GEh6qCMmeRzmXh1fQU3807T006UW2KySt'
+secret_key = 'sk_test_usJpaY578y1tukSBj9Mx0V1E00QW2ZUeKj'
+
+# strip API key
+stripe.api_key = secret_key
 
 # functions to take different amounts of payments from stripe below
 

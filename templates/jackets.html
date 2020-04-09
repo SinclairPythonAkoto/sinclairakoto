@@ -8,21 +8,21 @@
 
 {% block header %}
 <!-- Image header -->
-<div class="w3-display-container w3-container">
+<div class="w3-display-container w3-container w3-greyscale">
   <img src="static/demoshop/jackets_header.png" alt="demoshop_Image" style="width:100%">
 </div>
 {% endblock %}
 
 {% block content %}
 <!-- Product grid -->
-<div class="w3-row w3-grayscale">
+<div class="w3-row">
   <div class="w3-col l3 s6">
     <div class="w3-container">
       <div class="w3-display-container">
         <img src="/static/demoshop/Jackets/gilet-black.jpeg" style="width:100%">
         <span class="w3-tag w3-display-topleft">Sale!</span>
         <div class="w3-display-middle w3-display-hover">
-          <a href="https://www.bondrobotics.tech">
+          <a href="{{ url_for('black_gilet_purchase') }}">
             <button class="w3-button w3-black">Buy now <i class="fa fa-shopping-cart"></i></button>
           </a>
         </div>
@@ -39,7 +39,6 @@
     <div class="w3-container">
       <div class="w3-display-container">
         <img src="/static/demoshop/Jackets/nike-swoosh-jumper-grey.jpeg" style="width:100%">
-        <span class="w3-tag w3-display-topleft">New</span>
         <div class="w3-display-middle w3-display-hover">
           <a href="https://www.bondrobotics.tech">
             <button class="w3-button w3-black">Buy now <i class="fa fa-shopping-cart"></i></button>
@@ -47,6 +46,25 @@
         </div>
       </div>
       <p>Grey Nike Swoosh Sweater<br><b>£55.00</b></p>
+    </div>
+    <div class="w3-container">
+      <img src="/w3images/jeans3.jpg" style="width:100%">
+      <p>Washed Skinny Jeans<br><b>$20.50</b></p>
+    </div>
+  </div>
+
+  <div class="w3-col l3 s6">
+    <div class="w3-container">
+      <div class="w3-display-container">
+        <img src="/static/demoshop/Jackets/nike-khaki-tracksuit.jpeg" style="width:100%">
+        <span class="w3-tag w3-display-topleft">New</span>
+        <div class="w3-display-middle w3-display-hover">
+          <a href="https://www.bondrobotics.tech">
+            <button class="w3-button w3-black">Buy now <i class="fa fa-shopping-cart"></i></button>
+          </a>
+        </div>
+      </div>
+      <p>Khaki Nike Swoosh Tracksuit<br><b>£114.95</b></p>
     </div>
     <div class="w3-container">
       <img src="/w3images/jeans3.jpg" style="width:100%">
