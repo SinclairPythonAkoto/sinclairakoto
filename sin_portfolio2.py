@@ -8,6 +8,25 @@ from payments import *
 
 app = Flask(__name__)
 
+# Flask-Mail config
+app.config.update(dict(
+    DEBUG = True,
+    MAIL_SERVER = 'smtp.gmail.com',
+    MAIL_PORT = 465,
+    MAIL_USE_TLS = False,
+    MAIL_USE_SSL = True,
+    MAIL_USERNAME = "sinclair.python@gmail.com",
+    MAIL_PASSWORD = "Python2020",
+    MAIL_DEFAULT_SENDER = ('BondRobotics'),
+    MAIL_MAX_EMAILS = 25
+))
+
+mail = Mail(app)
+
+# set session secret secret_key
+app.secret_key = os.getenv("SECRET_KEY")
+
+
 @app.route('/')
 def home():
     return render_template('home.html')
@@ -58,21 +77,28 @@ def black_gilet_purchase():
 
 @app.route('/black-gilet-checkout', methods=['POST'])
 def black_gilet_checkout():
-    name = request.form.get("Name")
+    from payments import BlackGilet_45gbp
+    customer_name = request.form.get("Name")
     street = request.form.get("Street")
     city = request.form.get("City")
     postcode = request.form.get("Postcode")
-    if street == '' and postcode == '':
-        return "You need to enter your delivery address"
-    else:
-        from payments import BlackGilet_45gbp
-        CEmail = request.form['stripeEmail']
+    product = "ASOS Black Gilet"
+    price = "£45.00"
 
-        # Customer Email to send complimentary message
-        myEmail = CEmail
+    CEmail = request.form['stripeEmail']
 
-        # return redirect(url_for('demoshop'))
-        return f"Your package was sent to:{name}\n{street}\n{city}\n{postcode}\nprice: £45.00\nReciept sent to: {CEmail}"
+    # Customer Email to send complimentary message
+    myEmail = CEmail
+    # sending an email to the customer
+    msg = Message('Thank you for your purchase!', recipients=[myEmail]) # (Email subject, [Customer Email])
+    msg.html = f"<p>Thank you {customer_name} for your recent purchase from My Demo Shop! This is an email confirming that you purchased an {product} for {price}.\n\nAs this is a demo version, you will not recieve a separate email from Stripe confirming your with a reference number.\nYour item(s) will be sent to {street}, {city}, {postcode} and will be dispatched to our courier soon.\nDeliveries usually take between 3 - 7 working days, if your delivery has taken longer than that please contact us with your reference number.\n\nAdditionally, if you would like to continue shopping at My Demo Shop please click <b><a href='https://www.sinclair.codes/demoshop'>here</a></b>.<br><br>\n\nTo leave a comment/review please click <b><a href='https://www.sinclair.codes/demoshop#demoshop_footer'>here</a></b>.</p>"
+    # add an attachment logo/pdf etc to email
+    with app.open_resource('BondRobotics_logo_crop.JPG') as logo:
+        msg.attach('BondRobotics_logo_crop.JPG', 'image/jpeg', logo.read())
+    mail.send(msg)
+
+    return redirect(url_for('demoshop'))
+    # return f"Your package was sent to:{name}\n\n{street}\n\n{city}\n\n{postcode}\n\nitem: {product}\n\nprice: {price}\n\nReciept sent to: {CEmail}"
 
 if __name__ == '__main__':
    app.run(debug=True)
