@@ -18,13 +18,12 @@
 <meta name="og:image:width" content="300" />
 <meta name="og:image:length" content="300" />
 <meta name="og:description" content="Make a single payment through Stripe to buy an ASOS Black Gilet" />
-
 {% endblock %}
 
 {% block header %}
 <!-- Image header -->
 <div class="w3-display-container w3-container">
-  <img src="/static/demoshop/Jackets/gilet-black.jpeg" alt="demoshop_Image" style="width:60%; height:60%">
+  <img src="/static/demoshop/Jackets/gilet-black.jpeg" alt="BlackGilet_image" style="width:60%; height:60%">
 </div>
 <br>
 {% endblock %}
@@ -35,7 +34,6 @@
 <form action="{{ url_for('black_gilet_checkout') }}" method="post">
   <h1>ASOS Black Gilet with white italic print</h1>
   <div class="w3-col s8">
-    <!-- <h1>ASOS Black Gilet with white italic print</h1> -->
     <div class="w3-container">
       <h4>Delivery details</h4>
       <p>Please enter your details in order for us to send your product to</p>
