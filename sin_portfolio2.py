@@ -12,12 +12,12 @@ app = Flask(__name__)
 app.config.update(dict(
     DEBUG = True,
     MAIL_SERVER = 'smtp.gmail.com',
-    MAIL_PORT = 465,
-    MAIL_USE_TLS = False,
-    MAIL_USE_SSL = True,
-    MAIL_USERNAME = "sinclair.python@gmail.com",
-    MAIL_PASSWORD = "Python2020",
-    MAIL_DEFAULT_SENDER = ('BondRobotics'),
+    MAIL_PORT = 587,
+    MAIL_USE_TLS = True,
+    MAIL_USE_SSL = False,
+    MAIL_USERNAME = "sinclair.python@gmail.com", #os.getenv("GMAIL_EMAIL"),
+    MAIL_PASSWORD = os.getenv("GMAIL_PW"),
+    MAIL_DEFAULT_SENDER = ('BondRobotics', "sinclair.python@gmail.com"), #os.getenv("GMAIL_EMAIL")),
     MAIL_MAX_EMAILS = 25
 ))
 
@@ -139,6 +139,11 @@ def nike_swoosh_tracksuit_checkout():
         msg.attach('BondRobotics_logo_crop.JPG', 'image/jpeg', logo.read())
     mail.send(msg)
     return redirect(url_for('demoshop'))
+
+@app.route('/trousers')
+def demoshop_trousers():
+    header_title = "Trousers"
+    return render_template('trousers.html', header_title=header_title)
 
 if __name__ == '__main__':
    app.run(debug=True)
