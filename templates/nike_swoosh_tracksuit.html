@@ -2,28 +2,28 @@
 
 {% block meta %}
 <title>
-  Grey Nike Swoosh Sweater | My Demo Shop
+  Khaki Nike Swoosh Tracksuit | My Demo Shop
 </title>
-<link rel="icon" href="static/demoshop/Jackets/nike-swoosh-jumper-grey.jpeg">
-<meta name="description" content="Grey Nike Swoosh Sweater from My Demo Shop web app">
-<meta name="keywords" content="Demoshop Jackets, Nike, Nike Swoosh, Grey Nike Swoosh Sweater, BondRobotics, demo, retail, e-commerce, fashion, fashion store, retail shop, demo shop, web app, Stripe payments, single payment, online payments, My Demo Shop">
+<link rel="icon" href="static/demoshop/Jackets/nike-khaki-tracksuit.jpeg">
+<meta name="description" content="Khaki Nike Swoosh Tracksuit from My Demo Shop web app">
+<meta name="keywords" content="Demoshop Jackets, Nike, Nike Swoosh, Khaki Nike Swoosh Tracksuit, BondRobotics, demo, retail, e-commerce, fashion, fashion store, retail shop, demo shop, web app, Stripe payments, single payment, online payments, My Demo Shop">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="index, follow">
 <meta name="og:type" content="website" />
-<meta name="og:title" content="Grey Nike Swoosh Sweater - £55.00 | My Demo Shop Jackets | BondRobotics" />
-<meta name="og:url" content="https://www.sinclair.codes/nike-swoosh-sweater-purchase" />
+<meta name="og:title" content="Khaki Nike Swoosh Tracksuit - £125.00 | My Demo Shop Jackets | BondRobotics" />
+<meta name="og:url" content="https://www.sinclair.codes/nike-swoosh-tracksuit-purchase" />
 <meta name="og:image" content="http://www.sinclair.codes/demoshop_icon.jpg" />
 <meta name="og:image:secure-url" content="https://www.sinclair.codes/demoshop_icon.jpg" />
 <meta name="og:image:type" content="image/jpg" />
 <meta name="og:image:width" content="300" />
 <meta name="og:image:length" content="300" />
-<meta name="og:description" content="Make a single payment through Stripe to buy a grey Nike Swoosh Sweater" />
+<meta name="og:description" content="Make a single payment through Stripe to buy a khaki Nike Swoosh Tracksuit" />
 {% endblock %}
 
 {% block header %}
 <!-- Image header -->
 <div class="w3-display-container w3-container">
-  <img src="/static/demoshop/Jackets/nike-swoosh-jumper-grey.jpeg" alt="NikeSwooshSweater_image" style="width:60%; height:60%">
+  <img src="/static/demoshop/Jackets/nike-khaki-tracksuit.jpeg" alt="NikeSwooshTracksuit_image" style="width:60%; height:60%">
 </div>
 <br>
 {% endblock %}
@@ -31,8 +31,8 @@
 {% block content %}
 <!-- Product grid -->
 <div class="w3-row w3-greyscale">
-  <form action="{{ url_for('nike_swoosh_sweater_checkout') }}" method="post">
-    <h1>Grey Nike Swoosh Sweater</h1>
+  <form action="{{ url_for('nike_swoosh_tracksuit_checkout') }}" method="post">
+    <h1>Khaki Nike Swoosh Tracksuit</h1>
     <div class="w3-col s8">
       <div class="w3-container">
         <h4>Delivery details</h4>
@@ -53,7 +53,7 @@
     <br>
     <div style="display:none" id="deliveryDIV">
       <div class="jumbotron">
-        <h1 class="display-3">Grey Nike Swoosh Sweater £55.00</h1>
+        <h1 class="display-3">Khaki Nike Swoosh Tracksuit £125.00</h1>
         <p class="lead"><b>Click below to purchase</b></p>
         <p>
           You will be prompted to enter your email, card number, card expiry date and the CVC number.
@@ -72,10 +72,10 @@
         <script
         src="https://checkout.stripe.com/checkout.js" class="stripe-button"
         data-key="{{ pub_key }}"
-        data-amount="5500"
+        data-amount="12500"
         data-name="My Demo Shop"
-        data-description="Grey Nike Swoosh Sweater"
-        data-image="/static/demoshop/Jackets/nike-swoosh-jumper-grey.jpeg"
+        data-description="Khaki Nike Swoosh Tracksuit"
+        data-image="/static/demoshop/Jackets/nike-khaki-tracksuit.jpeg"
         data-locale="auto"
         data-currency="gbp">
         </script>
