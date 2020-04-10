@@ -1,9 +1,24 @@
 {% extends "demoshop_layout.html" %}
 
 {% block meta %}
-  <title>
-    ASOS Black Gilet | My Demo Shop
-  </title>
+<title>
+  ASOS Black Gilet | My Demo Shop
+</title>
+<link rel="icon" href="static/demoshop/Jackets/gilet-black.jpeg">
+<meta name="description" content="ASOS Black Gilet with white italic print">
+<meta name="keywords" content="Demoshop Jackets, ASOS Black Gilet, BondRobotics, demo, retail, e-commerce, fashion, fashion store, retail shop, demo shop, web app, Stripe payments, single payment, online payments, My Demo Shop">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="index, follow">
+<meta name="og:type" content="website" />
+<meta name="og:title" content="ASOS Black Gilet - £45.00 | My Demo Shop Jackets | BondRobotics" />
+<meta name="og:url" content="https://www.sinclair.codes/black-gilet-purchase" />
+<meta name="og:image" content="http://www.sinclair.codes/demoshop_icon.jpg" />
+<meta name="og:image:secure-url" content="https://www.sinclair.codes/demoshop_icon.jpg" />
+<meta name="og:image:type" content="image/jpg" />
+<meta name="og:image:width" content="300" />
+<meta name="og:image:length" content="300" />
+<meta name="og:description" content="Make a single payment through Stripe to buy an ASOS Black Gilet" />
+
 {% endblock %}
 
 {% block header %}
@@ -19,7 +34,7 @@
 <div class="w3-row w3-greyscale">
 <form action="{{ url_for('black_gilet_checkout') }}" method="post">
   <h1>ASOS Black Gilet with white italic print</h1>
-  <div class="w3-col s4">
+  <div class="w3-col s8">
     <!-- <h1>ASOS Black Gilet with white italic print</h1> -->
     <div class="w3-container">
       <h4>Delivery details</h4>

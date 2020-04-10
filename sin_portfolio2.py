@@ -63,13 +63,10 @@ def demoshop():
     header_title = "My Demo Shop"
     return render_template('demoshop_home.html', header_title=header_title)
 
-@app.route('/jackets', methods=['GET', 'POST'])
+@app.route('/jackets')
 def demoshop_jackets():
     header_title = "Jackets"
-    if request.method == 'GET':
-        return render_template('jackets.html', header_title=header_title)
-    else:
-        pass
+    return render_template('jackets.html', header_title=header_title)
 
 @app.route('/black-gilet-purchase')
 def black_gilet_purchase():
@@ -98,7 +95,6 @@ def black_gilet_checkout():
     mail.send(msg)
 
     return redirect(url_for('demoshop'))
-    # return f"Your package was sent to:{name}\n\n{street}\n\n{city}\n\n{postcode}\n\nitem: {product}\n\nprice: {price}\n\nReciept sent to: {CEmail}"
 
 if __name__ == '__main__':
    app.run(debug=True)
