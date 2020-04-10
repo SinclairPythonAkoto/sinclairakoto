@@ -15,9 +15,9 @@ app.config.update(dict(
     MAIL_PORT = 587,
     MAIL_USE_TLS = True,
     MAIL_USE_SSL = False,
-    MAIL_USERNAME = "sinclair.python@gmail.com", #os.getenv("GMAIL_EMAIL"),
+    MAIL_USERNAME = "sinclair.python@gmail.com",
     MAIL_PASSWORD = os.getenv("GMAIL_PW"),
-    MAIL_DEFAULT_SENDER = ('BondRobotics', "sinclair.python@gmail.com"), #os.getenv("GMAIL_EMAIL")),
+    MAIL_DEFAULT_SENDER = ('BondRobotics', "sinclair.python@gmail.com"),
     MAIL_MAX_EMAILS = 25
 ))
 
@@ -144,6 +144,10 @@ def nike_swoosh_tracksuit_checkout():
 def demoshop_trousers():
     header_title = "Trousers"
     return render_template('trousers.html', header_title=header_title)
+
+@app.route('/nike-swoosh-joggers-purchase')
+def nike_swoosh_joggers_purchase():
+    return render_template('nike_joggers.html', pub_key=pub_key)
 
 if __name__ == '__main__':
    app.run(debug=True)

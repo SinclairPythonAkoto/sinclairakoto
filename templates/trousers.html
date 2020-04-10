@@ -1,14 +1,103 @@
 {% extends "demoshop_layout.html" %}
 
-{% meta data %}
+{% block meta %}
 <title>
   Trousers, Joggers, Jeans etc | My Demo Shop
 </title>
+<link rel="icon" href="static/demoshop/jeans_jogger.jpg">
+<meta name="description" content="View all the trousers available for the demo fashion store.">
+<meta name="keywords" content="Demoshop Trousers, BondRobotics, demo, retail, e-commerce, fashion, fashion store, retail shop, demo shop, web app, Stripe payments, single payment, online payments, My Demo Shop">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="index, follow">
+<meta name="og:type" content="website" />
+<meta name="og:title" content="Trousers, Joggers, Jeans etc | My Demo Shop Jackets | BondRobotics" />
+<meta name="og:url" content="https://www.sinclair.codes/trousers" />
+<meta name="og:image" content="http://www.sinclair.codes/demoshop/demoshop_icon.jpg" />
+<meta name="og:image:secure-url" content="https://www.sinclair.codes/demoshop/demoshop_icon.jpg" />
+<meta name="og:image:type" content="image/jpg" />
+<meta name="og:image:width" content="300" />
+<meta name="og:image:length" content="300" />
+<meta name="og:description" content="A demo version of an online fashion retail store, which customers can select an item to purchase. Here you can view all the trousers available at the fashion store." />
 {% endblock %}
 
 {% block header %}
 <!-- Image header -->
 <div class="w3-display-container w3-container w3-greyscale">
-  <img src="static/demoshop/jeans-joggers.jpg" alt="JeansJogger_Image" style="width:100%">
+  <img src="static/demoshop/jeans_joggers.jpg" alt="JeansJogger_Image" style="width:100%">
+</div>
+{% endblock %}
+
+{% block content %}
+<!-- Product grid -->
+<br>
+<div class="w3-row">
+  <div class="w3-col l3 s6">
+    <div class="w3-container">
+      <div class="w3-display-container">
+        <img src="/static/demoshop/Trousers/nike-grey-joggers.jpeg" style="width:100%">
+        <div class="w3-display-middle w3-display-hover">
+          <a href="{{ url_for('nike_swoosh_joggers_purchase') }}">
+            <button class="w3-button w3-black">Buy now <i class="fa fa-shopping-cart"></i></button>
+          </a>
+        </div>
+      </div>
+      <p>Grey Nike Swoosh Joggers<br><b>£55.00</b></p>
+    </div>
+    <div class="w3-container">
+      <div class="w3-display-container">
+        <img src="/static/demoshop/Trousers/tommy-jeans-blue.jpeg" style="width:100%">
+        <span class="w3-tag w3-display-topleft">New</span>
+      </div>
+      <p>Blue Tommy Jeans High Rise Straight Leg Jeans<br><b>£90.00</b></p>
+    </div>
+  </div>
+
+  <div class="w3-col l3 s6">
+    <div class="w3-container">
+      <div class="w3-display-container">
+        <img src="/static/demoshop/Trousers/super-skinny-black.jpeg" style="width:100%">
+        <span class="w3-tag w3-display-topleft">Exclusive</span>
+      </div>
+      <p>ASOS Super Skinny Jeans<br><b>£30.00</b></p>
+    </div>
+    <div class="w3-container">
+      <div class="w3-display-container">
+        <img src="/static/demoshop/Trousers/slouchy-jeans-pink.jpeg" style="width:100%">
+      </div>
+      <p>NA-KD Dusty Rose Slouch Jeans<br><b>£40.95</b></p>
+    </div>
+  </div>
+
+  <div class="w3-col l3 s6">
+    <div class="w3-container">
+      <div class="w3-display-container">
+        <img src="/static/demoshop/Trousers/levi-tapered-cropped-jeans.jpeg" style="width:100%">
+      </div>
+      <p>Levi Cropped Jeans<br><b>£60.00</b></p>
+    </div>
+    <div class="w3-container">
+      <div class="w3-display-container">
+        <img src="/static/demoshop/Trousers/nike-black-jeggins.jpeg" style="width:100%">
+        <span class="w3-tag w3-display-topleft">New</span>
+      </div>
+      <p>Black Nike High Waisted Jeggens<br><b>£27.00</b></p>
+    </div>
+  </div>
+
+  <div class="w3-col l3 s6">
+    <div class="w3-container">
+      <div class="w3-display-container">
+        <img src="/static/demoshop/Trousers/pumablack.jpeg" style="width:100%">
+        <span class="w3-tag w3-display-topleft"></span>
+      </div>
+      <p>Puma Repeat Logo<br><b>£75.00</b></p>
+    </div>
+    <div class="w3-container">
+      <div class="w3-display-container">
+        <img src="/static/demoshop/Trousers/asos-black-slim-jeans.jpeg" style="width:100%">
+      </div>
+      <p>Black Nike High Waisted Jeggens<br><b>£27.00</b></p>
+    </div>
+  </div>
 </div>
 {% endblock %}
