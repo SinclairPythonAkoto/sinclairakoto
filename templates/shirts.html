@@ -1,0 +1,106 @@
+{% extends "demoshop_layout.html" %}
+
+{% block meta %}
+<title>
+  Shirts, Formal, Casual etc | My Demo Shop
+</title>
+<link rel="icon" href="static/demoshop/formal_shirts1.jpg">
+<meta name="description" content="View all the shirts available for the demo fashion store.">
+<meta name="keywords" content="Demoshop Shirts, BondRobotics, demo, retail, e-commerce, fashion, fashion store, retail shop, demo shop, web app, Stripe payments, single payment, online payments, My Demo Shop">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="index, follow">
+<meta name="og:type" content="website" />
+<meta name="og:title" content="Shirts, Formal, Casual etc | My Demo Shop Shirts | BondRobotics" />
+<meta name="og:url" content="https://www.sinclair.codes/shirts" />
+<meta name="og:image" content="http://www.sinclair.codes/demoshop/demoshop_icon.jpg" />
+<meta name="og:image:secure-url" content="https://www.sinclair.codes/demoshop/demoshop_icon.jpg" />
+<meta name="og:image:type" content="image/jpg" />
+<meta name="og:image:width" content="300" />
+<meta name="og:image:length" content="300" />
+<meta name="og:description" content="Here you can view all the shirts available at the fashion store." />
+{% endblock %}
+
+{% block header %}
+<!-- Image header -->
+<div class="w3-display-container w3-container w3-greyscale">
+  <img src="static/demoshop/formal_shirts1.jpg" alt="JeansJogger_Image" style="width:100%">
+</div>
+{% endblock %}
+
+{% block content %}
+<!-- Product grid -->
+<br>
+<div class="w3-row">
+  <div class="w3-col l3 s6">
+    <div class="w3-container">
+      <div class="w3-display-container">
+        <img src="/static/demoshop/Shirts/stretch-slim-shirt-white.jpeg" style="width:100%">
+        <div class="w3-display-middle w3-display-hover">
+          <a href="{{ url_for('stretch_slim_shirt_purchase') }}">
+            <button class="w3-button w3-black">Buy now <i class="fa fa-shopping-cart"></i></button>
+          </a>
+        </div>
+      </div>
+      <p>ASOS White Stretch Slim Shirt<br><b>£18.00</b></p>
+    </div>
+    <div class="w3-container">
+      <div class="w3-display-container">
+        <img src="/static/demoshop/Shirts/new-look-oversized.jpeg" style="width:100%">
+      </div>
+      <p>New Look Oversized Shirt<br><b>£22.99</b></p>
+    </div>
+  </div>
+
+  <div class="w3-col l3 s6">
+    <div class="w3-container">
+      <div class="w3-display-container">
+        <img src="/static/demoshop/Shirts/paul-smith-shirt-khaki.jpeg" style="width:100%">
+        <span class="w3-tag w3-display-topleft">New</span>
+        <div class="w3-display-middle w3-display-hover">
+          <a href="{{ url_for('ps_shirt_purcahse') }}">
+            <button class="w3-button w3-black">Buy now <i class="fa fa-shopping-cart"></i></button>
+          </a>
+        </div>
+      </div>
+      <p>Khaki Paul Smith Patchwork Pocket Shirt<br><b>£135.00</b></p>
+    </div>
+    <div class="w3-container">
+      <div class="w3-display-container">
+        <img src="/static/demoshop/Shirts/tom-tailor-navy.jpeg" style="width:100%">
+      </div>
+      <p>Tom Tailor Shirt in Navy<br><b>£35.00</b></p>
+    </div>
+  </div>
+
+  <div class="w3-col l3 s6">
+    <div class="w3-container">
+      <div class="w3-display-container">
+        <img src="/static/demoshop/Shirts/skinny-blue-shirt.jpeg" style="width:100%">
+      </div>
+      <p>ASOS Blue Skinny Fit Stripe Shirt<br><b>£22.00</b></p>
+    </div>
+    <div class="w3-container">
+      <div class="w3-display-container">
+        <img src="/static/demoshop/Shirts/grey-shirt.jpeg" style="width:100%">
+      </div>
+      <p>American Eagle Stripe Oxford Shirt<br><b>£50.00</b></p>
+    </div>
+  </div>
+
+  <div class="w3-col l3 s6">
+    <div class="w3-container">
+      <div class="w3-display-container">
+        <img src="/static/demoshop/Shirts/6thJune-black-shirt.jpeg" style="width:100%">
+      </div>
+      <p>Sixth June Black Reflective Piping<br><b>£50.00</b></p>
+    </div>
+    <div class="w3-container">
+      <div class="w3-display-container">
+        <img src="/static/demoshop/Shirts/ted-baker-shirt.jpeg" style="width:100%">
+        <span class="w3-tag w3-display-topleft">Exclusive</span>
+      </div>
+      <p>Ted Baker Navy Animal Print<br><b>£95.00</b></p>
+    </div>
+  </div>
+</div>
+{% endblock %}
