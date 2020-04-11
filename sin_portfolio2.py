@@ -221,7 +221,27 @@ def demoshop_tshirts():
     header_title = "T-Shirts"
     return render_template('tshirts.html', header_title=header_title)
 
+@app.route('/ax-tshirt-purchase')
+def ax_tshirt_purchase():
+    return render_template('ax_shirt.html', pub_key=pub_key)
 
+@app.route('/ax-tshirt-checkout', methods=['POST'])
+def ax_tshirt_checkout():
+    from payments import ArmaniExchangeTshirt_35gpb
+    customer_name = request.form.get("Name")
+    street = request.form.get("Street")
+    city = request.form.get("City")
+    postcode = request.form.get("Postcode")
+    product = "Red Armani Exchange AX Text Logo T-shirt"
+    price = "£35.00"
+    CEmail = request.form['stripeEmail']
+    myEmail = CEmail
+    msg = Message('Thank you for your purchase!', recipients=[myEmail])
+    msg.html = f"<p>Thank you {customer_name} for your recent purchase from My Demo Shop! This is an email confirming that you purchased a {product} for {price}.<br><br>As this is a demo version, you will not recieve a separate email from Stripe confirming your with a reference number.<br>Your item(s) will be sent to {street}, {city}, {postcode} and will be dispatched to our courier soon.<br>Deliveries usually take between 3 - 7 working days, if your delivery has taken longer than that please contact us with your reference number.<br><br>Additionally, if you would like to continue shopping at My Demo Shop please click <b><a href='https://www.sinclair.codes/demoshop'>here</a></b>.<br><br>To leave a comment/review please click <b><a href='https://www.sinclair.codes/demoshop#demoshop_footer'>here</a></b>.</p>"
+    with app.open_resource('BondRobotics_logo_crop.JPG') as logo:
+        msg.attach('BondRobotics_logo_crop.JPG', 'image/jpeg', logo.read())
+    mail.send(msg)
+    return redirect(url_for('demoshop'))
 
 if __name__ == '__main__':
    app.run(debug=True)
