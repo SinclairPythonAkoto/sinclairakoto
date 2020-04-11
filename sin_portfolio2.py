@@ -270,6 +270,28 @@ def demoshop_shoes():
     header_title = "Shoes"
     return render_template('shoes.html', header_title=header_title)
 
+@app.route('/topman-loafers-purchase')
+def topman_loafers_purchase():
+    return render_template('topman_loafers.html', pub_key=pub_key)
+
+@app.route('/topman-loafers-checkout')
+def topman_loafers_checkout():
+    from payments import TopmanLoafers_35gbp
+    customer_name = request.form.get("Name")
+    street = request.form.get("Street")
+    city = request.form.get("City")
+    postcode = request.form.get("Postcode")
+    product = "Topman Black Velvet Loafers"
+    price = "£35.00"
+    CEmail = request.form['stripeEmail']
+    myEmail = CEmail
+    msg = Message('Thank you for your purchase!', recipients=[myEmail])
+    msg.html = f"<p>Thank you {customer_name} for your recent purchase from My Demo Shop! This is an email confirming that you purchased a {product} for {price}.<br><br>As this is a demo version, you will not recieve a separate email from Stripe confirming your with a reference number.<br>Your item(s) will be sent to {street}, {city}, {postcode} and will be dispatched to our courier soon.<br>Deliveries usually take between 3 - 7 working days, if your delivery has taken longer than that please contact us with your reference number.<br><br>Additionally, if you would like to continue shopping at My Demo Shop please click <b><a href='https://www.sinclair.codes/demoshop'>here</a></b>.<br><br>To leave a comment/review please click <b><a href='https://www.sinclair.codes/demoshop#demoshop_footer'>here</a></b>.</p>"
+    with app.open_resource('BondRobotics_logo_crop.JPG') as logo:
+        msg.attach('BondRobotics_logo_crop.JPG', 'image/jpeg', logo.read())
+    mail.send(msg)
+    return redirect(url_for('demoshop'))
+
 @app.route('/trainers')
 def demoshop_trainers():
     header_title = "Trainers"
