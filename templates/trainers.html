@@ -26,3 +26,77 @@
   <img src="static/demoshop/trainers-shop.jpg" alt="ShoesHeader_Image" style="width:100%">
 </div>
 {% endblock %}
+
+{% block content %}
+<!-- Product grid -->
+<br>
+<div class="w3-row">
+  <div class="w3-col l3 s6">
+    <div class="w3-container">
+      <div class="w3-display-container">
+        <img src="/static/demoshop/Trainers/nike-air-max-90.jpeg" style="width:100%">
+        <div class="w3-display-middle w3-display-hover">
+          <a href="{{ url_for('nike_air_max_90_purchase') }}">
+            <button class="w3-button w3-black">Buy now <i class="fa fa-shopping-cart"></i></button>
+          </a>
+        </div>
+      </div>
+      <p>White/Purple Nike Air Max 90 (Men)<br><b>£114.95</b></p>
+    </div>
+    <div class="w3-container">
+      <div class="w3-display-container">
+        <img src="/static/demoshop/Trainers/AirMax90.jpeg" style="width:100%">
+        <span class="w3-tag w3-display-topleft">New</span>
+      </div>
+      <p>White/Purple Air Max 90 (Women)<br><b>£115.00</b></p>
+    </div>
+  </div>
+
+  <div class="w3-col l3 s6">
+    <div class="w3-container">
+      <div class="w3-display-container">
+        <img src="/static/demoshop/Trainers/PumaRS-X3.jpeg" style="width:100%">
+        <span class="w3-tag w3-display-topleft">New</span>
+      </div>
+      <p>Blue Puma RS-X3 Gradient (Men)<br><b>£90.00</b></p>
+    </div>
+    <div class="w3-container">
+      <div class="w3-display-container">
+        <img src="/static/demoshop/Trainers/NewBalance-orange.jpeg" style="width:100%">
+      </div>
+      <p>Orange New Balance 530 (Women)<br><b>£80.00</b></p>
+    </div>
+  </div>
+
+  <div class="w3-col l3 s6">
+    <div class="w3-container">
+      <div class="w3-display-container">
+        <img src="/static/demoshop/Trainers/reebok.jpeg" style="width:100%">
+        <span class="w3-tag w3-display-topleft">Exclusive</span>
+      </div>
+      <p>Reebok Running Zig Kinetica (Men)<br><b>£90.00</b></p>
+    </div>
+    <div class="w3-container">
+      <div class="w3-display-container">
+        <img src="/static/demoshop/Trainers/TedBakerChunky.jpeg" style="width:100%">
+      </div>
+      <p>Neon Ted Baker Chuncky Trainers (Women)<br><b>£119.00</b></p>
+    </div>
+  </div>
+
+  <div class="w3-col l3 s6">
+    <div class="w3-container">
+      <div class="w3-display-container">
+        <img src="/static/demoshop/Trainers/PoloRalphLauren.jpeg" style="width:100%">
+      </div>
+      <p>White Polo Ralph Lauren with Navy Logo (Men)<br><b>£105.00</b></p>
+    </div>
+    <div class="w3-container">
+      <div class="w3-display-container">
+        <img src="/static/demoshop/Trainers/adidasFalcon.jpeg" style="width:100%">
+      </div>
+      <p>Metalic Adidas Originals Falcon (Women)<br><b>£84.95</b></p>
+    </div>
+  </div>
+</div>
+{% endblock %}

@@ -1,0 +1,87 @@
+{% extends "demoshop_layout.html" %}
+
+{% block meta %}
+<title>
+  Mens White/Purple Air Max 90 | My Demo Shop
+</title>
+<link rel="icon" href="static/demoshop/Trainers/nike-air-max-90.jpeg">
+<meta name="description" content="Mens White/Purple Air Max 90"
+<meta name="keywords" content="Demoshop Trainers, Nike, Air Max 90, Nike Air Max 90, BondRobotics, demo, retail, e-commerce, fashion, fashion store, retail shop, demo shop, web app, Stripe payments, single payment, online payments, My Demo Shop">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="index, follow">
+<meta name="og:type" content="website" />
+<meta name="og:title" content="Mens White/Purple Air Max 90 - £114.95 | My Demo Shop Trainers | BondRobotics" />
+<meta name="og:url" content="https://www.sinclair.codes/nike-air-max-90-purchase" />
+<meta name="og:image" content="http://www.sinclair.codes/demoshop_icon.jpg" />
+<meta name="og:image:secure-url" content="https://www.sinclair.codes/demoshop_icon.jpg" />
+<meta name="og:image:type" content="image/jpg" />
+<meta name="og:image:width" content="300" />
+<meta name="og:image:length" content="300" />
+<meta name="og:description" content="Make a single payment through Stripe to buy a pair of mens white/purple Nike Air Max 90 trainers" />
+{% endblock %}
+
+{% block header %}
+<!-- Image header -->
+<div class="w3-display-container w3-container">
+  <img src="/static/demoshop/Trainers/nike-air-max-90.jpeg" alt="NikeAirMax90_Image" style="width:60%; height:60%">
+</div>
+<br>
+{% endblock %}
+
+{% block content %}
+<!-- Product grid -->
+<div class="w3-row w3-greyscale">
+<form action="{{ nike_air_max_90_checkout }}" method="post">
+  <h1>Mens White/Purple Nike Air MAx 90</h1>
+  <div class="w3-col s8">
+    <div class="w3-container">
+      <h4>Delivery details</h4>
+      <p>Please enter your details in order for us to send your product to</p>
+      <b>This can be made up </b>
+      <p><input class="w3-input w3-border" type="text" placeholder="Name" name="Name" required></p>
+      <p><input class="w3-input w3-border" type="text" placeholder="Street" name="Street" required></p>
+      <p><input class="w3-input w3-border" type="text" placeholder="City" name="City" required></p>
+      <p><input class="w3-input w3-border" type="text" placeholder="Postcode" name="Postcode" required></p>
+      <p>
+        Remember to enter a <em>valid email</em> and '<b>4242 4242 4242 4242</b>' when prompted for the card number.
+      </p>
+    </div>
+  </div>
+  <div class="w3-container">
+    <button class="w3-xlarge" onclick="checkoutFunction()"><i class="fab fa-cc-stripe"></i>Make Payment</button>
+  </div>
+<br>
+<div style="display:none" id="deliveryDIV">
+  <div class="jumbotron">
+    <h1 class="display-3">Mens White/Purple Nike Air Max 90 £35.00</h1>
+    <p class="lead"><b>Click below to purchase</b></p>
+    <p>
+      You will be prompted to enter your email, card number, card expiry date and the CVC number.
+      Once your transaction is complete you will recieve an automated email which will act as your reciept/acknowledgement
+      of payment; so please make sure the email you enter is genuine.
+    </p>
+    <p>
+      <em>
+        Please note that this is just a demo so a real credit/debit card will <b>NOT</b> be needed.
+      </em>
+    </p>
+    <p>
+      In order to test the payment feature, please type '<b>4242 4242 4242 4242</b>'
+      when prompted for the card number.
+    </p>
+      <script
+      src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+      data-key="{{ pub_key }}"
+      data-amount="11495"
+      data-name="My Demo Shop"
+      data-description="Mens White/Purple Air Max 90"
+      data-image="static/demoshop/Trainers/nike-air-max-90.jpeg"
+      data-locale="auto"
+      data-currency="gbp">
+      </script>
+  </div>
+  <br>
+</div>
+</form>
+</div>
+{% endblock %}
