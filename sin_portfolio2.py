@@ -265,5 +265,17 @@ def nike_swoosh_tshirt_checkout():
     mail.send(msg)
     return redirect(url_for('demoshop'))
 
+@app.route('/shoes')
+def demoshop_shoes():
+    header_title = "Shoes"
+    return render_template('shoes.html', header_title=header_title)
+
+@app.route('/trainers')
+def demoshop_trainers():
+    header_title = "Trainers"
+    return render_template('trainers.html', header_title=header_title)
+
+
+
 if __name__ == '__main__':
    app.run(debug=True)

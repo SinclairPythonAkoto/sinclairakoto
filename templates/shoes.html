@@ -1,0 +1,56 @@
+{% extends "demoshop_layout.html" %}
+
+{% block meta %}
+<title>
+  Shoes, Casual, Formal etc | My Demo Shop
+</title>
+<link rel="icon" href="static/demoshop/shoe-shop.jpg">
+<meta name="description" content="View all the shoes available for the demo fashion store.">
+<meta name="keywords" content="Demoshop Shoes, BondRobotics, demo, retail, e-commerce, fashion, fashion store, retail shop, demo shop, web app, Stripe payments, single payment, online payments, My Demo Shop">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="index, follow">
+<meta name="og:type" content="website" />
+<meta name="og:title" content="Shoes, Casual, Formal etc | My Demo Shop Shoes | BondRobotics" />
+<meta name="og:url" content="https://www.sinclair.codes/shoes" />
+<meta name="og:image" content="http://www.sinclair.codes/demoshop/demoshop_icon.jpg" />
+<meta name="og:image:secure-url" content="https://www.sinclair.codes/demoshop/demoshop_icon.jpg" />
+<meta name="og:image:type" content="image/jpg" />
+<meta name="og:image:width" content="300" />
+<meta name="og:image:length" content="300" />
+<meta name="og:description" content="Here you can view all the shoes available at the fashion store." />
+{% endblock %}
+
+{% block header %}
+<!-- Image header -->
+<div class="w3-display-container w3-container w3-greyscale">
+  <img src="static/demoshop/shoe-shop.jpg" alt="ShoesHeader_Image" style="width:100%">
+</div>
+{% endblock %}
+
+{% block content %}
+<!-- Product grid -->
+<br>
+<div class="w3-row">
+  <div class="w3-col l3 s6">
+    <div class="w3-container">
+      <div class="w3-display-container">
+        <img src="/static/demoshop/Shoes/topman-velvet-balck.jpeg" style="width:100%">
+        <div class="w3-display-middle w3-display-hover">
+          <a href="">
+            <button class="w3-button w3-black">Buy now <i class="fa fa-shopping-cart"></i></button>
+          </a>
+        </div>
+      </div>
+      <p>Topman Black Velvet Loafrs<br><b>£35.00</b></p>
+    </div>
+    <div class="w3-container">
+      <div class="w3-display-container">
+        <img src="/static/demoshop/Trousers/tommy-jeans-blue.jpeg" style="width:100%">
+        <span class="w3-tag w3-display-topleft">New</span>
+      </div>
+      <p>Blue Tommy Jeans High Rise Straight Leg Jeans<br><b>£90.00</b></p>
+    </div>
+  </div>
+
+</div>
+{% endblock %}

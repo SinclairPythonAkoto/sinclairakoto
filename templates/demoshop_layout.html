@@ -30,10 +30,10 @@ body,h1,h2,h3,h4,h5,h6,.w3-wide {font-family: "Montserrat", sans-serif;}
     <a href="{{ url_for('demoshop_trousers') }}" class="w3-bar-item w3-button">Trousers</a>
     <a href="{{ url_for('demoshop_shirts')}}" class="w3-bar-item w3-button">Shirts</a>
     <a href="{{ url_for('demoshop_tshirts') }}" class="w3-bar-item w3-button">T-Shirts</a>
-    <a href="#" class="w3-bar-item w3-button">Shoes</a>
-    <a href="#" class="w3-bar-item w3-button">Trainers</a>
-    <a href="#" class="w3-bar-item w3-button">Dresses</a>
-    <a href="#" class="w3-bar-item w3-button">Gymwear</a>
+    <a href="{{ url_for('demoshop_shoes') }}" class="w3-bar-item w3-button">Shoes</a>
+    <a href="{{ url_for('demoshop_trainers') }}" class="w3-bar-item w3-button">Trainers</a>
+    <a href="{{ url_for('demoshop') }}" class="w3-bar-item w3-button">Dresses</a>
+    <a href="{{ url_for('demoshop') }}" class="w3-bar-item w3-button">Gymwear</a>
   </div>
   <a href="#footer" class="w3-bar-item w3-button w3-padding">Contact</a>
   <a href="javascript:void(0)" class="w3-bar-item w3-button w3-padding" onclick="document.getElementById('newsletter').style.display='block'">Newsletter</a>
