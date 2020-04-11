@@ -216,6 +216,12 @@ def ps_shirt_checkout():
     mail.send(msg)
     return redirect(url_for('demoshop'))
 
+@app.route('/t-shirts')
+def demoshop_tshirts():
+    header_title = "T-Shirts"
+    return render_template('tshirts.html', header_title=header_title)
+
+
 
 if __name__ == '__main__':
    app.run(debug=True)

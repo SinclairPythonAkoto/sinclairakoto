@@ -1,0 +1,107 @@
+{% extends "demoshop_layout.html" %}
+
+{% block meta %}
+<title>
+  T-Shirts, Casual, Sport etc | My Demo Shop
+</title>
+<link rel="icon" href="static/demoshop/t-shirts.jpg">
+<meta name="description" content="View all the T-shirts available for the demo fashion store.">
+<meta name="keywords" content="Demoshop T-Shirts, BondRobotics, demo, retail, e-commerce, fashion, fashion store, retail shop, demo shop, web app, Stripe payments, single payment, online payments, My Demo Shop">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="index, follow">
+<meta name="og:type" content="website" />
+<meta name="og:title" content="T-Shirts, Casual, Sport etc | My Demo Shop Shirts | BondRobotics" />
+<meta name="og:url" content="https://www.sinclair.codes/t-shirts" />
+<meta name="og:image" content="http://www.sinclair.codes/demoshop/demoshop_icon.jpg" />
+<meta name="og:image:secure-url" content="https://www.sinclair.codes/demoshop/demoshop_icon.jpg" />
+<meta name="og:image:type" content="image/jpg" />
+<meta name="og:image:width" content="300" />
+<meta name="og:image:length" content="300" />
+<meta name="og:description" content="Here you can view all the T-shirts available at the fashion store." />
+{% endblock %}
+
+{% block header %}
+<!-- Image header -->
+<div class="w3-display-container w3-container w3-greyscale">
+  <img src="static/demoshop/t-shirts.jpg" alt="T-ShirtsHeader_Image" style="width:100%">
+</div>
+{% endblock %}
+
+{% block content %}
+<!-- Product grid -->
+<br>
+<div class="w3-row">
+  <div class="w3-col l3 s6">
+    <div class="w3-container">
+      <div class="w3-display-container">
+        <img src="/static/demoshop/T-Shirts/AX-red-tshirt.jpeg" style="width:100%">
+        <div class="w3-display-middle w3-display-hover">
+          <a href="">
+            <button class="w3-button w3-black">Buy now <i class="fa fa-shopping-cart"></i></button>
+          </a>
+        </div>
+      </div>
+      <p>Red Armani Exchange AX Text Logo T-shirt<br><b>£35.00</b></p>
+    </div>
+    <div class="w3-container">
+      <div class="w3-display-container">
+        <img src="/static/demoshop/T-Shirts/russell-athletic-crop.jpeg" style="width:100%">
+        <span class="w3-tag w3-display-topleft">Exclusive</span>
+      </div>
+      <p>Russell Athletic Cream Super Cropped Top<br><b>£45.00</b></p>
+    </div>
+  </div>
+
+  <div class="w3-col l3 s6">
+    <div class="w3-container">
+      <div class="w3-display-container">
+        <img src="/static/demoshop/T-Shirts/nike-swoosh-tshirt-white.jpeg" style="width:100%">
+        <div class="w3-display-middle w3-display-hover">
+          <a href="">
+            <button class="w3-button w3-black">Buy now <i class="fa fa-shopping-cart"></i></button>
+          </a>
+        </div>
+      </div>
+      <p>White Nike Swoosh Logo T-shirt<br><b>£19.95</b></p>
+    </div>
+    <div class="w3-container">
+      <div class="w3-display-container">
+        <img src="/static/demoshop/T-Shirts/black-nike-swoosh.jpeg" style="width:100%">
+      </div>
+      <p>Black Nike Central Swoosh Oversized T-Shirt<br><b>£20.00</b></p>
+    </div>
+  </div>
+
+  <div class="w3-col l3 s6">
+    <div class="w3-container">
+      <div class="w3-display-container">
+        <img src="/static/demoshop/T-Shirts/fred-perry.jpeg" style="width:100%">
+        <span class="w3-tag w3-display-topleft">New</span>
+      </div>
+      <p>Fred Perry Navy Toped Ringer T-Shirt<br><b>£45.00</b></p>
+    </div>
+    <div class="w3-container">
+      <div class="w3-display-container">
+        <img src="/static/demoshop/T-Shirts/levis-batwing.jpeg" style="width:100%">
+      </div>
+      <p>Levi's Batwing Logo T-Shirt<br><b>£20.00</b></p>
+    </div>
+  </div>
+
+  <div class="w3-col l3 s6">
+    <div class="w3-container">
+      <div class="w3-display-container">
+        <img src="/static/demoshop/T-Shirts/adidas-3srtipe.jpeg" style="width:100%">
+      </div>
+      <p>Adidas Originals Black 3 Stripe T-Shirt<br><b>£15.83</b></p>
+    </div>
+    <div class="w3-container">
+      <div class="w3-display-container">
+        <img src="/static/demoshop/T-Shirts/vans-white.jpeg" style="width:100%">
+        <span class="w3-tag w3-display-topleft">Sale</span>
+      </div>
+      <p>Vans White Small Logo T-Shirt<br><b>£16.00</b></p>
+    </div>
+  </div>
+</div>
+{% endblock %}
