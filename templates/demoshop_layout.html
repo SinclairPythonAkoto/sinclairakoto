@@ -81,14 +81,16 @@ body,h1,h2,h3,h4,h5,h6,.w3-wide {font-family: "Montserrat", sans-serif;}
     <div class="w3-row-padding">
       <div class="w3-col s4">
         <h4>Contact</h4>
-        <p>Thanks for testing out My Demo Shop. Feel free to leave a review or to ask me a question.</p>
-        <form action="/action_page.php" target="_blank">
+        <p>
+          Thanks for testing out My Demo Shop. Feel free to leave a review or to ask me a question by clicking
+          <a href="https://www.bondrobotics.tech/#contact">here</a>.
+        </p>
           <p><input class="w3-input w3-border" type="text" placeholder="Name" name="Name" required></p>
           <p><input class="w3-input w3-border" type="text" placeholder="Email" name="Email" required></p>
           <p><input class="w3-input w3-border" type="text" placeholder="Subject" name="Subject" required></p>
-          <p><input class="w3-input w3-border" type="text" placeholder="Message" name="Message" required></p>
+          <textarea id="messageBox" class="w3-input w3-padding-16 w3-border" type="text" placeholder="Message" name="message_content" rows="8" cols="50" title="Write your message here" required></textarea>
           <button type="submit" class="w3-button w3-block w3-black">Send</button>
-        </form>
+
       </div>
 
       <div class="w3-col s4">
@@ -123,7 +125,14 @@ body,h1,h2,h3,h4,h5,h6,.w3-wide {font-family: "Montserrat", sans-serif;}
     </div>
   </footer>
 
-  <div class="w3-black w3-center w3-padding-24">Powered by <a href="https://www.w3schools.com/w3css/default.asp" title="W3.CSS" target="_blank" class="w3-hover-opacity">w3.css</a></div>
+  <div class="w3-black w3-center w3-padding-24">
+    <p class="w3-medium">Created by
+        <a href="https://www.bondrobotics.tech" target="_blank" class="w3-text-blue" title="BondRobotics Homepage">
+          <i class="fas fa-robot"></i>
+          <b>BondRobotics</b>
+        </a>
+      </p>
+  </div>
 
   <!-- End page content -->
 </div>

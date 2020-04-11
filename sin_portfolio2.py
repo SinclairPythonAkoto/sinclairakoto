@@ -26,7 +26,6 @@ mail = Mail(app)
 # set session secret secret_key
 app.secret_key = os.getenv("SECRET_KEY")
 
-
 @app.route('/')
 def home():
     return render_template('home.html')
@@ -63,6 +62,24 @@ def demoshop():
     header_title = "My Demo Shop"
     return render_template('demoshop_home.html', header_title=header_title)
 
+# @app.route('/contact_us', methods=['POST'])
+# def contact_us():
+#     customer_name = request.form.get("Name")
+#     customer_email = request.form.get("Email")
+#     subject = request.form.get("Subject")
+#     content = request.form.get("message_content")
+#     # Email to be sent to myself
+#     myEmail = "bondrobotics@gmail.com"
+#     # sending an email BondRobotics
+#     msg = Message(f'My Demo Shop Message From {customer_name}', recipients=[myEmail]) # (Email subject, [Customer Email])
+#     msg.html = f"<p>You have a message from someone who has tested the My Demo Shop web app!</p><br><p>Name: <b>{customer_name}<b></p><br><p>{customer_name}'s contact: <b>{customer_email}</b></p><br><br><p>{customer_name}'s message:<br>{subject}<br>{contect}</p><br><br>If you wish to visit the My Demo Shop web app, please click <a href='https://www.sinclair.codes/demoshop'>here</a>."
+#     # add an attachment logo/pdf etc to email
+#     with app.open_resource('BondRobotics_logo_crop.JPG') as logo:
+#         msg.attach('BondRobotics_logo_crop.JPG', 'image/jpeg', logo.read())
+#     mail.send(msg)
+#     return redirect(url_for('demoshop'))
+
+
 @app.route('/jackets')
 def demoshop_jackets():
     header_title = "Jackets"
@@ -88,7 +105,7 @@ def black_gilet_checkout():
     myEmail = CEmail
     # sending an email to the customer
     msg = Message('Thank you for your purchase!', recipients=[myEmail]) # (Email subject, [Customer Email])
-    msg.html = f"<p>Thank you {customer_name} for your recent purchase from My Demo Shop! This is an email confirming that you purchased an {product} for {price}.<br><br>As this is a demo version, you will not recieve a separate email from Stripe confirming your with a reference number.<br>Your item(s) will be sent to {street}, {city}, {postcode} and will be dispatched to our courier soon.<br>Deliveries usually take between 3 - 7 working days, if your delivery has taken longer than that please contact us with your reference number.<br><br>Additionally, if you would like to continue shopping at My Demo Shop please click <b><a href='https://www.sinclair.codes/demoshop'>here</a></b>.<br><br>To leave a comment/review please click <b><a href='https://www.sinclair.codes/demoshop#demoshop_footer'>here</a></b>.</p>"
+    msg.html = f"<p>Thank you {customer_name} for your recent purchase from My Demo Shop! This is an email confirming that you purchased an {product} for {price}.<br><br>As this is a demo version, you will not recieve a separate email from Stripe confirming your with a reference number.<br>Your item(s) will be sent to {street}, {city}, {postcode} and will be dispatched to our courier soon.<br>Deliveries usually take between 3 - 7 working days, if your delivery has taken longer than that please contact us with your reference number.<br><br>Additionally, if you would like to continue shopping at My Demo Shop please click <b><a href='https://www.sinclair.codes/demoshop'>here</a></b>.<br><br>To leave a comment/review please click <b><a href='https://www.bondrobotics.tech/#contact'>here</a></b>.</p>"
     # add an attachment logo/pdf etc to email
     with app.open_resource('BondRobotics_logo_crop.JPG') as logo:
         msg.attach('BondRobotics_logo_crop.JPG', 'image/jpeg', logo.read())
@@ -112,7 +129,7 @@ def nike_swoosh_sweater_checkout():
     CEmail = request.form['stripeEmail']
     myEmail = CEmail
     msg = Message('Thank you for your purchase!', recipients=[myEmail])
-    msg.html = f"<p>Thank you {customer_name} for your recent purchase from My Demo Shop! This is an email confirming that you purchased a {product} for {price}.<br><br>As this is a demo version, you will not recieve a separate email from Stripe confirming your with a reference number.<br>Your item(s) will be sent to {street}, {city}, {postcode} and will be dispatched to our courier soon.<br>Deliveries usually take between 3 - 7 working days, if your delivery has taken longer than that please contact us with your reference number.<br><br>Additionally, if you would like to continue shopping at My Demo Shop please click <b><a href='https://www.sinclair.codes/demoshop'>here</a></b>.<br><br>To leave a comment/review please click <b><a href='https://www.sinclair.codes/demoshop#demoshop_footer'>here</a></b>.</p>"
+    msg.html = f"<p>Thank you {customer_name} for your recent purchase from My Demo Shop! This is an email confirming that you purchased a {product} for {price}.<br><br>As this is a demo version, you will not recieve a separate email from Stripe confirming your with a reference number.<br>Your item(s) will be sent to {street}, {city}, {postcode} and will be dispatched to our courier soon.<br>Deliveries usually take between 3 - 7 working days, if your delivery has taken longer than that please contact us with your reference number.<br><br>Additionally, if you would like to continue shopping at My Demo Shop please click <b><a href='https://www.sinclair.codes/demoshop'>here</a></b>.<br><br>To leave a comment/review please click <b><a href='https://www.bondrobotics.tech/#contact'>here</a></b>.</p>"
     with app.open_resource('BondRobotics_logo_crop.JPG') as logo:
         msg.attach('BondRobotics_logo_crop.JPG', 'image/jpeg', logo.read())
     mail.send(msg)
@@ -134,7 +151,7 @@ def nike_swoosh_tracksuit_checkout():
     CEmail = request.form['stripeEmail']
     myEmail = CEmail
     msg = Message('Thank you for your purchase!', recipients=[myEmail])
-    msg.html = f"<p>Thank you {customer_name} for your recent purchase from My Demo Shop! This is an email confirming that you purchased a {product} for {price}.<br><br>As this is a demo version, you will not recieve a separate email from Stripe confirming your with a reference number.<br>Your item(s) will be sent to {street}, {city}, {postcode} and will be dispatched to our courier soon.<br>Deliveries usually take between 3 - 7 working days, if your delivery has taken longer than that please contact us with your reference number.<br><br>Additionally, if you would like to continue shopping at My Demo Shop please click <b><a href='https://www.sinclair.codes/demoshop'>here</a></b>.<br><br>To leave a comment/review please click <b><a href='https://www.sinclair.codes/demoshop#demoshop_footer'>here</a></b>.</p>"
+    msg.html = f"<p>Thank you {customer_name} for your recent purchase from My Demo Shop! This is an email confirming that you purchased a {product} for {price}.<br><br>As this is a demo version, you will not recieve a separate email from Stripe confirming your with a reference number.<br>Your item(s) will be sent to {street}, {city}, {postcode} and will be dispatched to our courier soon.<br>Deliveries usually take between 3 - 7 working days, if your delivery has taken longer than that please contact us with your reference number.<br><br>Additionally, if you would like to continue shopping at My Demo Shop please click <b><a href='https://www.sinclair.codes/demoshop'>here</a></b>.<br><br>To leave a comment/review please click <b><a href='https://www.bondrobotics.tech/#contact'>here</a></b>.</p>"
     with app.open_resource('BondRobotics_logo_crop.JPG') as logo:
         msg.attach('BondRobotics_logo_crop.JPG', 'image/jpeg', logo.read())
     mail.send(msg)
@@ -161,7 +178,7 @@ def nike_swoosh_joggers_checkout():
     CEmail = request.form['stripeEmail']
     myEmail = CEmail
     msg = Message('Thank you for your purchase!', recipients=[myEmail])
-    msg.html = f"<p>Thank you {customer_name} for your recent purchase from My Demo Shop! This is an email confirming that you purchased a {product} for {price}.<br><br>As this is a demo version, you will not recieve a separate email from Stripe confirming your with a reference number.<br>Your item(s) will be sent to {street}, {city}, {postcode} and will be dispatched to our courier soon.<br>Deliveries usually take between 3 - 7 working days, if your delivery has taken longer than that please contact us with your reference number.<br><br>Additionally, if you would like to continue shopping at My Demo Shop please click <b><a href='https://www.sinclair.codes/demoshop'>here</a></b>.<br><br>To leave a comment/review please click <b><a href='https://www.sinclair.codes/demoshop#demoshop_footer'>here</a></b>.</p>"
+    msg.html = f"<p>Thank you {customer_name} for your recent purchase from My Demo Shop! This is an email confirming that you purchased a {product} for {price}.<br><br>As this is a demo version, you will not recieve a separate email from Stripe confirming your with a reference number.<br>Your item(s) will be sent to {street}, {city}, {postcode} and will be dispatched to our courier soon.<br>Deliveries usually take between 3 - 7 working days, if your delivery has taken longer than that please contact us with your reference number.<br><br>Additionally, if you would like to continue shopping at My Demo Shop please click <b><a href='https://www.sinclair.codes/demoshop'>here</a></b>.<br><br>To leave a comment/review please click <b><a href='https://www.bondrobotics.tech/#contact'>here</a></b>.</p>"
     with app.open_resource('BondRobotics_logo_crop.JPG') as logo:
         msg.attach('BondRobotics_logo_crop.JPG', 'image/jpeg', logo.read())
     mail.send(msg)
@@ -188,7 +205,7 @@ def stretch_slim_shirt_checkout():
     CEmail = request.form['stripeEmail']
     myEmail = CEmail
     msg = Message('Thank you for your purchase!', recipients=[myEmail])
-    msg.html = f"<p>Thank you {customer_name} for your recent purchase from My Demo Shop! This is an email confirming that you purchased a {product} for {price}.<br><br>As this is a demo version, you will not recieve a separate email from Stripe confirming your with a reference number.<br>Your item(s) will be sent to {street}, {city}, {postcode} and will be dispatched to our courier soon.<br>Deliveries usually take between 3 - 7 working days, if your delivery has taken longer than that please contact us with your reference number.<br><br>Additionally, if you would like to continue shopping at My Demo Shop please click <b><a href='https://www.sinclair.codes/demoshop'>here</a></b>.<br><br>To leave a comment/review please click <b><a href='https://www.sinclair.codes/demoshop#demoshop_footer'>here</a></b>.</p>"
+    msg.html = f"<p>Thank you {customer_name} for your recent purchase from My Demo Shop! This is an email confirming that you purchased a {product} for {price}.<br><br>As this is a demo version, you will not recieve a separate email from Stripe confirming your with a reference number.<br>Your item(s) will be sent to {street}, {city}, {postcode} and will be dispatched to our courier soon.<br>Deliveries usually take between 3 - 7 working days, if your delivery has taken longer than that please contact us with your reference number.<br><br>Additionally, if you would like to continue shopping at My Demo Shop please click <b><a href='https://www.sinclair.codes/demoshop'>here</a></b>.<br><br>To leave a comment/review please click <b><a href='https://www.bondrobotics.tech/#contact'>here</a></b>.</p>"
     with app.open_resource('BondRobotics_logo_crop.JPG') as logo:
         msg.attach('BondRobotics_logo_crop.JPG', 'image/jpeg', logo.read())
     mail.send(msg)
@@ -210,7 +227,7 @@ def ps_shirt_checkout():
     CEmail = request.form['stripeEmail']
     myEmail = CEmail
     msg = Message('Thank you for your purchase!', recipients=[myEmail])
-    msg.html = f"<p>Thank you {customer_name} for your recent purchase from My Demo Shop! This is an email confirming that you purchased a {product} for {price}.<br><br>As this is a demo version, you will not recieve a separate email from Stripe confirming your with a reference number.<br>Your item(s) will be sent to {street}, {city}, {postcode} and will be dispatched to our courier soon.<br>Deliveries usually take between 3 - 7 working days, if your delivery has taken longer than that please contact us with your reference number.<br><br>Additionally, if you would like to continue shopping at My Demo Shop please click <b><a href='https://www.sinclair.codes/demoshop'>here</a></b>.<br><br>To leave a comment/review please click <b><a href='https://www.sinclair.codes/demoshop#demoshop_footer'>here</a></b>.</p>"
+    msg.html = f"<p>Thank you {customer_name} for your recent purchase from My Demo Shop! This is an email confirming that you purchased a {product} for {price}.<br><br>As this is a demo version, you will not recieve a separate email from Stripe confirming your with a reference number.<br>Your item(s) will be sent to {street}, {city}, {postcode} and will be dispatched to our courier soon.<br>Deliveries usually take between 3 - 7 working days, if your delivery has taken longer than that please contact us with your reference number.<br><br>Additionally, if you would like to continue shopping at My Demo Shop please click <b><a href='https://www.sinclair.codes/demoshop'>here</a></b>.<br><br>To leave a comment/review please click <b><a href='https://www.bondrobotics.tech/#contact'>here</a></b>.</p>"
     with app.open_resource('BondRobotics_logo_crop.JPG') as logo:
         msg.attach('BondRobotics_logo_crop.JPG', 'image/jpeg', logo.read())
     mail.send(msg)
@@ -237,7 +254,7 @@ def ax_tshirt_checkout():
     CEmail = request.form['stripeEmail']
     myEmail = CEmail
     msg = Message('Thank you for your purchase!', recipients=[myEmail])
-    msg.html = f"<p>Thank you {customer_name} for your recent purchase from My Demo Shop! This is an email confirming that you purchased a {product} for {price}.<br><br>As this is a demo version, you will not recieve a separate email from Stripe confirming your with a reference number.<br>Your item(s) will be sent to {street}, {city}, {postcode} and will be dispatched to our courier soon.<br>Deliveries usually take between 3 - 7 working days, if your delivery has taken longer than that please contact us with your reference number.<br><br>Additionally, if you would like to continue shopping at My Demo Shop please click <b><a href='https://www.sinclair.codes/demoshop'>here</a></b>.<br><br>To leave a comment/review please click <b><a href='https://www.sinclair.codes/demoshop#demoshop_footer'>here</a></b>.</p>"
+    msg.html = f"<p>Thank you {customer_name} for your recent purchase from My Demo Shop! This is an email confirming that you purchased a {product} for {price}.<br><br>As this is a demo version, you will not recieve a separate email from Stripe confirming your with a reference number.<br>Your item(s) will be sent to {street}, {city}, {postcode} and will be dispatched to our courier soon.<br>Deliveries usually take between 3 - 7 working days, if your delivery has taken longer than that please contact us with your reference number.<br><br>Additionally, if you would like to continue shopping at My Demo Shop please click <b><a href='https://www.sinclair.codes/demoshop'>here</a></b>.<br><br>To leave a comment/review please click <b><a href='https://www.bondrobotics.tech/#contact'>here</a></b>.</p>"
     with app.open_resource('BondRobotics_logo_crop.JPG') as logo:
         msg.attach('BondRobotics_logo_crop.JPG', 'image/jpeg', logo.read())
     mail.send(msg)
@@ -259,7 +276,7 @@ def nike_swoosh_tshirt_checkout():
     CEmail = request.form['stripeEmail']
     myEmail = CEmail
     msg = Message('Thank you for your purchase!', recipients=[myEmail])
-    msg.html = f"<p>Thank you {customer_name} for your recent purchase from My Demo Shop! This is an email confirming that you purchased a {product} for {price}.<br><br>As this is a demo version, you will not recieve a separate email from Stripe confirming your with a reference number.<br>Your item(s) will be sent to {street}, {city}, {postcode} and will be dispatched to our courier soon.<br>Deliveries usually take between 3 - 7 working days, if your delivery has taken longer than that please contact us with your reference number.<br><br>Additionally, if you would like to continue shopping at My Demo Shop please click <b><a href='https://www.sinclair.codes/demoshop'>here</a></b>.<br><br>To leave a comment/review please click <b><a href='https://www.sinclair.codes/demoshop#demoshop_footer'>here</a></b>.</p>"
+    msg.html = f"<p>Thank you {customer_name} for your recent purchase from My Demo Shop! This is an email confirming that you purchased a {product} for {price}.<br><br>As this is a demo version, you will not recieve a separate email from Stripe confirming your with a reference number.<br>Your item(s) will be sent to {street}, {city}, {postcode} and will be dispatched to our courier soon.<br>Deliveries usually take between 3 - 7 working days, if your delivery has taken longer than that please contact us with your reference number.<br><br>Additionally, if you would like to continue shopping at My Demo Shop please click <b><a href='https://www.sinclair.codes/demoshop'>here</a></b>.<br><br>To leave a comment/review please click <b><a href='https://www.bondrobotics.tech/#contact'>here</a></b>.</p>"
     with app.open_resource('BondRobotics_logo_crop.JPG') as logo:
         msg.attach('BondRobotics_logo_crop.JPG', 'image/jpeg', logo.read())
     mail.send(msg)
@@ -286,7 +303,7 @@ def topman_loafers_checkout():
     CEmail = request.form['stripeEmail']
     myEmail = CEmail
     msg = Message('Thank you for your purchase!', recipients=[myEmail])
-    msg.html = f"<p>Thank you {customer_name} for your recent purchase from My Demo Shop! This is an email confirming that you purchased a {product} for {price}.<br><br>As this is a demo version, you will not recieve a separate email from Stripe confirming your with a reference number.<br>Your item(s) will be sent to {street}, {city}, {postcode} and will be dispatched to our courier soon.<br>Deliveries usually take between 3 - 7 working days, if your delivery has taken longer than that please contact us with your reference number.<br><br>Additionally, if you would like to continue shopping at My Demo Shop please click <b><a href='https://www.sinclair.codes/demoshop'>here</a></b>.<br><br>To leave a comment/review please click <b><a href='https://www.sinclair.codes/demoshop#demoshop_footer'>here</a></b>.</p>"
+    msg.html = f"<p>Thank you {customer_name} for your recent purchase from My Demo Shop! This is an email confirming that you purchased a {product} for {price}.<br><br>As this is a demo version, you will not recieve a separate email from Stripe confirming your with a reference number.<br>Your item(s) will be sent to {street}, {city}, {postcode} and will be dispatched to our courier soon.<br>Deliveries usually take between 3 - 7 working days, if your delivery has taken longer than that please contact us with your reference number.<br><br>Additionally, if you would like to continue shopping at My Demo Shop please click <b><a href='https://www.sinclair.codes/demoshop'>here</a></b>.<br><br>To leave a comment/review please click <b><a href='https://www.bondrobotics.tech/#contact'>here</a></b>.</p>"
     with app.open_resource('BondRobotics_logo_crop.JPG') as logo:
         msg.attach('BondRobotics_logo_crop.JPG', 'image/jpeg', logo.read())
     mail.send(msg)
@@ -308,7 +325,7 @@ def fred_perry_loafers_checkout():
     CEmail = request.form['stripeEmail']
     myEmail = CEmail
     msg = Message('Thank you for your purchase!', recipients=[myEmail])
-    msg.html = f"<p>Thank you {customer_name} for your recent purchase from My Demo Shop! This is an email confirming that you purchased a {product} for {price}.<br><br>As this is a demo version, you will not recieve a separate email from Stripe confirming your with a reference number.<br>Your item(s) will be sent to {street}, {city}, {postcode} and will be dispatched to our courier soon.<br>Deliveries usually take between 3 - 7 working days, if your delivery has taken longer than that please contact us with your reference number.<br><br>Additionally, if you would like to continue shopping at My Demo Shop please click <b><a href='https://www.sinclair.codes/demoshop'>here</a></b>.<br><br>To leave a comment/review please click <b><a href='https://www.sinclair.codes/demoshop#demoshop_footer'>here</a></b>.</p>"
+    msg.html = f"<p>Thank you {customer_name} for your recent purchase from My Demo Shop! This is an email confirming that you purchased a {product} for {price}.<br><br>As this is a demo version, you will not recieve a separate email from Stripe confirming your with a reference number.<br>Your item(s) will be sent to {street}, {city}, {postcode} and will be dispatched to our courier soon.<br>Deliveries usually take between 3 - 7 working days, if your delivery has taken longer than that please contact us with your reference number.<br><br>Additionally, if you would like to continue shopping at My Demo Shop please click <b><a href='https://www.sinclair.codes/demoshop'>here</a></b>.<br><br>To leave a comment/review please click <b><a href='https://www.bondrobotics.tech/#contact'>here</a></b>.</p>"
     with app.open_resource('BondRobotics_logo_crop.JPG') as logo:
         msg.attach('BondRobotics_logo_crop.JPG', 'image/jpeg', logo.read())
     mail.send(msg)
@@ -335,7 +352,7 @@ def nike_air_max_90_checkout():
     CEmail = request.form['stripeEmail']
     myEmail = CEmail
     msg = Message('Thank you for your purchase!', recipients=[myEmail])
-    msg.html = f"<p>Thank you {customer_name} for your recent purchase from My Demo Shop! This is an email confirming that you purchased a {product} for {price}.<br><br>As this is a demo version, you will not recieve a separate email from Stripe confirming your with a reference number.<br>Your item(s) will be sent to {street}, {city}, {postcode} and will be dispatched to our courier soon.<br>Deliveries usually take between 3 - 7 working days, if your delivery has taken longer than that please contact us with your reference number.<br><br>Additionally, if you would like to continue shopping at My Demo Shop please click <b><a href='https://www.sinclair.codes/demoshop'>here</a></b>.<br><br>To leave a comment/review please click <b><a href='https://www.sinclair.codes/demoshop#demoshop_footer'>here</a></b>.</p>"
+    msg.html = f"<p>Thank you {customer_name} for your recent purchase from My Demo Shop! This is an email confirming that you purchased a {product} for {price}.<br><br>As this is a demo version, you will not recieve a separate email from Stripe confirming your with a reference number.<br>Your item(s) will be sent to {street}, {city}, {postcode} and will be dispatched to our courier soon.<br>Deliveries usually take between 3 - 7 working days, if your delivery has taken longer than that please contact us with your reference number.<br><br>Additionally, if you would like to continue shopping at My Demo Shop please click <b><a href='https://www.sinclair.codes/demoshop'>here</a></b>.<br><br>To leave a comment/review please click <b><a href='https://www.bondrobotics.tech/#contact'>here</a></b>.</p>"
     with app.open_resource('BondRobotics_logo_crop.JPG') as logo:
         msg.attach('BondRobotics_logo_crop.JPG', 'image/jpeg', logo.read())
     mail.send(msg)
